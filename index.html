@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Carlos Capecchi | Psicología y Sexualidad</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, user-scaleable=no">
+    </head>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".faq-slide");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+            });
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        });
+
+        // Mostrar la primera al cargar
+        showSlide(currentIndex);
+        });
+    </script>
+
+    <body>
+        <!-- MENÚ -->
+        <div class="contenedor-menu">
+            <a class="logo-menu" href="./index.html">
+                <img src="./images/Logo-solo-vector.png" alt="logo-profesional">
+            </a>
+            <nav>
+                <ul class="lista-menu">
+                    <li class="elemento-menu"><a class="link-menu" href="./acerca-de.html">Acerca de</a></li>
+                    <li class="elemento-menu"><a class="link-menu" href="./servicios.html">Servicios</a></li>
+                    <li class="elemento-menu"><a class="link-menu" href="./blog.html">Blog</a></li>
+                    <li class="elemento-menu"><a class="link-menu" href="./contacto.html">Contáctame</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- TITULAR -->
+        <div class="titular">
+            <div class="titular-texto">
+                <h1>Carlos Capecchi</h1>
+                <h2>Psicología y Sexualidad</h2>
+                <a class="boton-saber-mas" href="./acerca-de.html">Saber más</a>
+            </div>
+            
+        </div>
+
+
+        <!-- FORMULARIO CONTACTO Y FRASE -->
+        <section class="contacto">
+            <div class="contenedor-contacto">
+
+                <!-- BLOQUE IZQUIERDO -->
+                 <div class="bloque-izquierdo">
+                    <h2>CONTÁCTAME</h2>
+                    <form id="formulario-de-contacto" action="https://formspree.io/f/mzzkrrdy" method="post">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" required>
+                        <label for="correo">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        <label for="mensaje">Mensaje o pregunta:</label>
+                        <input id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                 </div>
+
+                 <!-- BLOQUE DERECHO -->
+                 <div class="bloque-dercho">
+                    <hr />
+                    <p>“Cuidar la mente y el cuerpo es un acto de amor propio. La salud mental y la salud sexual son pilares del bienestar integral; buscar ayuda profesional no es signo de debilidad, sino de valentía y compromiso con uno mismo.”</p>
+                    <hr />
+                 </div>
+            </div>
+        </section>
+
+        <!-- SECCION DE SERVICIOS -->
+        <section class="servicios-contenedor">
+            <h2>DESCUBRE MIS SERVICIOS</h2>
+            <p>Conecta contigo, con el otro y con tu deseo</p>
+
+            <div class="contenedor-de-servicios">
+                <article class="servicio">
+                    <img src="./images/Therapy.png" alt="terapia-individual">
+                    <h3>
+                        <a href="./servicios.html">Psicoterapia Individual</a>
+                    </h3>
+                    <p>Espacio de acompañamiento profesional para explorar tus emociones, pensamientos y conductas. A través del proceso terapéutico podrás identificar patrones relacionales, fortalecer tus recursos personales, afrontar situaciones difíciles y mejorar tu bienestar emocional.</p>
+                </article>
+
+                <article class="servicio">
+                    <img src="./images/Couple.png" alt="terapia-de-pareja">
+                    <h3>
+                        <a href="./servicios.html">Terapia de Pareja</a>
+                    </h3>
+                    <p>Es un espacio de diálogo guiado donde ambos miembros de la pareja pueden reencontrarse, mejorar la comunicación y reconstruir la confianza. El objetivo es promover vínculos más saludables y una convivencia basada en el respeto mutuo.</p>
+                </article>
+
+                <article class="servicio">
+                    <img src="./images/Sex.png" alt="terapia-sexual">
+                    <h3>
+                        <a href="./servicios.html">Terapia Sexual</a>
+                    </h3>
+                    <p>Dirigida a personas o parejas que enfrentan dificultades en su vida íntima. Se abordan temas como el deseo, el erotismo, disfunciones o insatisfacción; favoreciendo una sexualidad más plena, libre de tabúes y conectada con el bienestar integral.</p>
+                </article>
+
+                <article class="servicio">
+                    <img src="./images/Assessment.png" alt="evaluación-psicologica">
+                    <h3>
+                        <a href="./servicios.html">Evaluación Psicológica</a>
+                    </h3>
+                    <p>Un proceso riguroso y confidencial que permite comprender el funcionamiento cognitivo, afectivo-social y conductual de una persona. Se utilizan pruebas estandarizadas para orientar diagnósticos, tratamientos o decisiones personales y laborales.</p>
+                </article>
+
+                <article class="servicio">
+                    <img src="./images/kids.png" alt="diagnostico-infantil">
+                    <h3>
+                        <a href="./servicios.html">Psicodiagnóstico Infanto-Juvenil</a>
+                    </h3>
+                    <p>Evaluación especializada que busca comprender el desarrollo emocional, cognitivo y social de niños, niñas y adolescentes. Permite detectar áreas de mejora, orientar intervenciones y acompañar a las familias en el proceso de crecimiento.</p>
+                </article>
+                
+                <article class="servicio">
+                    <img src="./images/Consultancy.png" alt="asesoria-empresarial">
+                    <h3>
+                        <a href="./servicios.html">Asesoría Empresarial</a>
+                    </h3>
+                    <p>Servicio enfocado en el bienestar psicológico y el clima laboral dentro de las organizaciones. A través de la evaluación y orientación profesional, se promueve la productividad, la comunicación efectiva y la salud mental en el trabajo.</p>
+                </article> 
+            </div>
+        </section>
+
+        <!-- SECCION DE FAQ -->
+        <section class="seccion-faq">
+            <h2>PREGUNTAS FRECUENTES (FAQ)</h2>
+
+            <div class="faq-wrapper">
+                <img class="faq-icon" src="./images/wonder-brain.webp" alt="man-wondering">
+                <div class="faq-container">
+                    <div class="faq-carousel">
+                        <div class="faq-slide active">
+                            <h3>¿Cómo sé si necesito ir a un psicólogo?</h3>
+                            <p>Muchas personas buscan ayuda cuando sienten que sus estrategias habituales ya no son suficientes. Si notas ansiedad persistente, tristeza, irritabilidad, problemas en tus relaciones, dificultad para dormir o pérdida de motivación, la psicoterapia puede ayudarte a comprender y manejar lo que te ocurre.</p>
+                        </div>
+                        <div class="faq-slide">
+                            <h3>¿Qué pasa en la primera sesión?</h3>
+                            <p>En la primera cita el objetivo principal es conocerte y comprender tu motivo de consulta. Te haré preguntas sobre tu historia personal, tus síntomas, tus relaciones y tus objetivos. No es necesario que tengas todo claro; el proceso se construye juntos.</p>
+                        </div>
+                        <div class="faq-slide">
+                            <h3>¿Cuánto dura un proceso terapéutico?</h3>
+                            <p>Depende del tipo de problema, la frecuencia de las sesiones y tus metas personales. Algunos procesos duran semanas, otros varios meses y algunos años. Lo importante es evaluar periódicamente los avances y ajustar el trabajo según tu progreso.</p>
+                        </div>
+                        <div class="faq-slide">
+                            <h3>¿Qué tipo de problemas trata un sexólogo clínico?</h3>
+                            <p>La sexología clínica trabaja con dificultades del deseo, la excitación, el orgasmo, el dolor sexual, además de conflictos de pareja, orientación/identidad sexual y de género, entre otras. El objetivo no es solo resolver síntomas, sino mejorar la calidad de vida sexual y afectiva</p>
+                        </div>
+                        <div class="faq-slide">
+                            <h3>¿Qué se espera de mí en un proceso teraéutico?</h3>
+                            <p>Compromiso y participación activa. Se te pedirá reflexionar entre sesiones, realizar tareas o ejercicios y aplicar en tu vida cotidiana lo que se trabaja en consulta. El cambio ocurre tanto dentro como, principalmente, fuera de la sesión.</p>
+                        </div>
+                        <div class="faq-slide">
+                            <h3>¿Qué pasa si tengo vergüenza o dificultad para hablar de mi sexualidad?</h3>
+                            <p>Es totalmente normal. El sexólogo está formado para tratar estos temas con respeto, sensibilidad y sin juicios. A medida que se genera confianza, la comunicación se vuelve más natural.</p>
+                        </div>
+                        <div class="faq-slide">
+                            <h3>¿Puedo acudir solo(a) o debo ir con mi pareja?</h3>
+                            <p>Depende del motivo. Si el problema es individual (por ejemplo baja libido, ansiedad), puedes asistir solo(a). Si la dificultad involucra a ambos miembros de la pareja (como problemas en la comunicación, la convivencia, la vida sexual compartida), se recomienda la terapia de pareja o terapia sexual conjunta.</p>
+                        </div>
+                        <div class="faq-slide">
+                            <h3>¿Todo lo que diga en sesión es confidencial?</h3>
+                            <p>Si, absolutamente. La confidencialidad es una norma ética y legal. Solo se rompe si hay riesgo inminente para tu vida o la de otra persona, lo cual se explica desde el inicio del tratamiento.</p>
+                        </div>
+                    </div>
+                    <div class="faq-controls">
+                        <button id="prev">❮</button>
+                        <button id="next">❯</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG -->
+        <section class="blog">
+            <h2>BLOG-GUEANDO</h2>
+            <p class="subtitulo-blog">Reflexión, opinión e investigación en psicología y sexualidad</p>
+            
+            <div class="contenedor-blog">
+                <article class="publicacion">
+                    <img src="./images/pareja-toxica.jpg" alt="pareja-toxica">
+                    <h4>
+                        <a href="./blog.html">Enamorados o intoxicados: ¿Cómo son las parejas tóxicas?</a>
+                    </h4>
+                    <p>Las relaciones tóxicas no siempre comienzan siendo evidentes; muchas veces se disfrazan de amor intenso o dependencia emocional.</p>
+                </article>
+
+                <article class="publicacion">
+                    <img src="./images/erectile-dysfunction.jpeg" alt="hombre-triste-en-cama-con-pareja-disfuncion">
+                    <h4>
+                        <a href="./blog.html">Disfunción eréctil: Un problema más allá del cuerpo</a>
+                    </h4>
+                    <p>A veces, los factores psicológicos como el estrés, son los principales responsables de la dificultad para mantener una erección.</p>
+                </article>
+
+                <article class="publicacion">
+                    <img src="./images/grief.png" alt="mujer-sola-en-columpio-duelo">
+                    <h4>
+                        <a href="./blog.html">Cuando se va el otro: Comprendiendo el duelo</a>
+                    </h4>
+                    <p>El duelo no solo implica perder a alguien, sino también aprender a reconstruirse entre el dolor, la ausencia y la transformación interior.</p>
+                </article>
+
+                <article class="publicacion">
+                    <img src="./images/infidelidad.jpg" alt="homre-toma-mano-de-otra-mujer-infidelidad">
+                    <h4>
+                        <a href="./blog.html">Infidelidad: Síntomas de una relación que pide cambio</a>
+                    </h4>
+                    <p>La infidelidad no siempre nace del deseo de otro cuerpo, muchas veces surge del intento inconsciente de llenar un vacío emocional o personal.</p>
+                </article>
+            </div>
+        </section>
+
+
+
+
+        <!-- FOOTER -->
+        <section id="footer">
+            <div class="contenedor-footer">
+                <h2>Pedir ayuda es el primer paso para el cambio</h2>
+                <a class="footer-btn" href="./contacto.html">Contáctame</a>
+            </div>
+            <p class="copywrite">&copy; 2025 Carlos Capecchi. Todos los derechos reservados.</p>
+        </section>
+
+        <section id="whatsapp">
+            <a href="https://wa.me/593939283303">
+                <img class="whatsapp-icon" src="./images/WhatsApp.png">
+            </a>
+        </section>
+
+        <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+
+        <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".menu-list");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Cierra el menú al hacer click en un enlace
+        document.querySelectorAll(".menu-list a").forEach(link =>
+            link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            })
+        );
+        </script>
+
+
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Montserrat";
+        }
+        /* ---- MENÚ ---- */
+        img {
+            width: 90px;
+            padding: 0;
+            margin: 0;
+        }
+        .contenedor-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 4;
+        }
+        .lista-menu {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+            gap: 30px;
+        }
+        .link-menu {
+            text-decoration: none;
+            color: cadetblue;
+            font-family: "Merriweather Sans";
+            font-size: 17px;
+        }
+        .link-menu:hover {
+            color: #28545D;
+        }
+
+        /* ---- TITULAR ---- */
+        .titular {
+            padding-top: 260px;
+            background-image: url(./images/fondo-landing.png);
+            background-size: cover;
+            height: 75vh;
+        }
+        .titular-texto {
+            text-align: left;
+            padding-left: 60px;
+        }
+        .titular-texto h1,
+        .titular-texto h2,
+        .titular-texto .boton-saber-mas {
+            opacity: 0;
+            transform: translateX(100px);
+            animation: barridoDerecha 1s ease-out forwards;
+        }
+        @keyframes barridoDerecha {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .titular-texto h1 {
+            animation-delay: 0.2s;
+        }
+
+        .titular-texto h2 {
+            animation-delay: 0.4s;
+        }
+
+        .titular-texto .boton-saber-mas {
+            animation-delay: 0.6s;
+        }
+        h1 {
+            font-family: "Poppins";
+            font-size: 70px;
+            margin-bottom: 0;
+            color: #f1faee;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            font-family: "Montserrat";
+            margin-top: 2px;
+            color: #28545D;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 30px;
+        }
+        .boton-saber-mas {
+            text-decoration: none;
+            color: white;
+            font-family: "Merriweather Sans";
+            background-color: #50828b;
+            font-size: 16px;
+            padding: 15px 30px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .boton-saber-mas:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .boton-saber-mas:active {
+            transform: scale(0.97);
+        }
+
+        /* ---- SECCION CONTACTO ---- */
+        .contacto {
+            padding: 60px 60px 40px 60px;
+        }
+        .contenedor-contacto {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 150px;
+            max-width: 1200px;
+            padding: 20px 60px 20px 90px;
+        }
+        .bloque-izquierdo {
+            flex: 1;
+            min-width: 200px;
+            max-width: 500px;
+        }
+        .bloque-izquierdo h2 {
+            text-align: center;
+            text-shadow: none;
+            color: #5C96A2;
+            font-family: "Poppins";
+        }
+        .bloque-dercho {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+            text-align: center;
+        }        
+        .bloque-derecho,p {
+            text-align: right;
+            color: cadetblue;
+            font-weight: 400;
+            font-size: 20px;
+            font-family: "Merriweather Sans";
+        }
+        #formulario-de-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;            
+        }
+        label {
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: "Montserrat";
+            font-size: 15px;
+            box-sizing: border-box;
+            align-content: center;
+        }
+        button {
+            background-color: #5C96A2;
+            color: white;
+            font-family: "Merriweather Sans";
+            border: none;
+            border-radius: 8px;
+            padding: 10px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 110px;
+            display: block;
+            margin: auto;
+            margin-top: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /*---- SECCION DE SERVICIOS ----*/
+        .servicios-contenedor {
+            background-color: #f9fafc;
+            padding-top: 50px;
+            padding-bottom: 70px;
+        }
+        .contenedor-de-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            max-width: 1300px;
+            margin: auto;
+        }
+        .servicios-contenedor h2 {
+            text-align: left;
+            text-shadow: none;
+            color: #5C96A2;
+            font-family: "Poppins";
+            margin-left: 112px;
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+        .servicios-contenedor p {
+            text-align: left;
+            margin: 0;
+            padding: top 0;
+            color: black;
+            margin-left: 112px;
+        }
+        .servicio {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s ease-out, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .servicio.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .servicio img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .servicio h3 a {
+            color: #28545D;
+            text-decoration: none;
+            font-size: 17px;
+            margin-left: 40px;
+        }
+        .servicio p {
+            color: #50828b;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 40px 30px 40px;
+            text-align: left;
+        }
+        .servicio:hover {
+            transform: translateY(-6px);
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+        }
+        .servicio h3:hover {
+            text-decoration: underline;
+        }
+
+        /* SECCION FAQ */        
+        h3 {
+            font-family: "Montserrat";
+            margin-top: 2px;
+            color: #28545D;
+            font-size: 21px;
+            margin-top: 30px;
+        }
+        .seccion-faq {
+            position: relative;
+            padding: 60px 80px 80px 80px;
+            background-color: white;
+            overflow: visible;
+        }
+        .seccion-faq h2 {
+            text-align: center;
+            text-shadow: none;
+            color: #5C96A2;
+            font-family: "Poppins";
+            font-size: 35px;
+        }
+        .faq-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-items: 80px;
+        }
+        .faq-icon {
+            position: absolute;
+            right: -80px;
+            bottom: -80px;
+            transform: translateX(-40%) translateY(0);
+            width: 400px;
+            height: 530px;
+            opacity: 0;
+            transform: translateX(-120px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .faq-icon.visible {
+            opacity: 0.9;
+            transform: translateX(0);
+        }
+        .faq-container {
+            position: relative;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            padding: 30px 60px;
+            overflow: hidden;
+            z-index: 2;
+            margin-top: 30px;
+        }
+        .faq-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+        .faq-slide.active {
+            display: block;
+        }
+        .faq-slide {
+            display: none;
+            animation: fade 0.6s ease;
+        }
+        .faq-slide p {
+            font-family: "Merriweather Sans";
+            font-size: 17px;
+            text-align: left;
+            margin-bottom: 45px;
+            line-height: 1.6;
+        }
+        /* ANIMACION FAQ */
+        @keyframes fade {
+            from { opacity: 0; transform: translateX(15px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        /* CONTROLES FAQ */
+        .faq-controls {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            gap: 10px;
+        }
+        .faq-controls button {
+            background-color: #5C96A2cc;
+            color: white;
+            border: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            padding: 5px 30px 30px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .faq-controls button:hover {
+            background-color: #28545D;
+        }
+
+        /* -- BLOG -- */
+        .blog {
+            background-color: #f9fafc;
+            padding-top: 50px;
+            padding-bottom: 70px;
+            margin-top: 0;
+        }
+        .blog h2 {
+            text-align: left;
+            text-shadow: none;
+            color: #5C96A2;
+            font-family: "Poppins";
+            margin-left: 112px;
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+        
+        .subtitulo-blog {
+            text-align: left;
+            margin: 0;
+            padding: top 0;
+            color: black;
+            margin-left: 112px;
+        }
+        .contenedor-blog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            max-width: 1300px;
+            margin: auto;
+        }
+        .publicacion {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out, box-shadow 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+            will-change: transform;
+        }
+        .publicacion.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .publicacion:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+        .publicacion img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        h4 {
+            font-family: "Montserrat";
+            color: #28545D;
+            font-size: 21px;
+            margin: 20px 30px;
+        }
+        .publicacion h4 a {
+            color: #28545D;
+            text-decoration: none;
+            font-size: 15px;
+            transition: text-decoration 0.2s ease, color 0.3s ease;
+        }
+        .publicacion h4 a:hover {
+            text-decoration: underline; 
+        }
+        .publicacion p {
+            color: #50828b;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0 30px 30px 30px;
+            text-align: left;
+        }
+
+        /* FOOTER */
+        .footer-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            background-color: #50828B;
+            padding: 15px 30px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
+            font-family: "Merriweather Sans";
+        }
+        .footer-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .footer-btn:active {
+            transform: scale(0.97);
+        }
+        #footer {
+            background-image: url(./images/fondo-footer.png);
+            text-align: center;
+            padding: 40px 0px 10px 0px;
+        }
+        #footer h2 {
+            color: #28545D;
+            text-decoration: none;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #footer p {
+            color: white;
+            text-align: center;
+            font-size: 13px;
+        }
+        #whatsapp a {
+            background: none;
+            position: fixed;
+            top: 85%;
+            right: 1%;
+        }
+        .whatsapp-icon {
+            height: 50px;
+            width: 50px;
+        }
+        .redir-serv {
+            text-decoration: none;
+            color: white;
+        }
+
+    </style>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const publicaciones = document.querySelectorAll(".publicacion");
+        const imagenes = document.querySelectorAll(".faq-icon");
+        const servicios = document.querySelectorAll(".servicio");
+        
+        const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Evita reanimar al hacer scroll hacia arriba
+            }
+        });
+        }, { threshold: 0.3 }); // 20% visible para activar
+
+        publicaciones.forEach(pub => observer.observe(pub));
+        imagenes.forEach(img => observer.observe(img));
+        servicios.forEach(servicio => observer.observe(servicio));
+    });
+    </script>
+
+    
+
+
+    </body>
+</html>

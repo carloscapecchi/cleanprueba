@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Carlos Capecchi</title>
+        <meta name="viewport" content="width=device-width, user-scaleable=no">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+       
+    <body>
+        <!-- ---- MENÚ ---- -->
+        <div class="contenedor-menu">
+            <a class="logo-menu" href="./index.html">
+                <img src="./images/Logo-solo-vector.png" alt="logo-profesional">
+            </a>
+            <nav>
+                <ul class="lista-menu">
+                    <li class="elemento-menu"><a class="link-menu" href="./acerca-de.html">Acerca de</a></li>
+                    <li class="elemento-menu"><a class="link-menu" href="./servicios.html">Servicios</a></li>
+                    <li class="elemento-menu"><a class="link-menu" href="./blog.html">Blog</a></li>
+                    <li class="elemento-menu"><a class="link-menu" href="./contacto.html">Contáctame</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <section class="encabezado"><h1>Sobre Mi</h1></section>
+            
+        <section class="titular">
+            <div class="titulo">
+                <!-- BLOQUE IZQUIERDO -->
+                <div class="bloque-izquierdo">
+                <h2>TE INVITO A CONOCERME</h2>
+                <h4 class="subtitulo-titular">Profesional apasionado por la salud mental y sexual</h4>
+                <p>
+                    A lo largo de mi formación he integrado una sólida base teórica con una
+                    profunda comprensión humana y contemporánea de la psicología. Mi práctica
+                    se sustenta en el respeto, la empatía y la convicción de que cada persona
+                    posee recursos internos para transformar su propia historia, siempre que
+                    encuentre el acompañamiento adecuado para hacerlo.
+                </p>
+
+                <ul class="lista-sobre">
+                    <li class="lista-elemento" data-contenido="formacion">Formación</li>
+                    <li class="lista-elemento" data-contenido="experiencia">Experiencia</li>
+                    <li class="lista-elemento" data-contenido="forma">Forma de trabajo</li>
+                    <li class="lista-elemento" data-contenido="diferencia">Lo que me diferencia</li>
+                </ul>
+
+                <!-- Aquí aparece el texto dinámico -->
+                <div id="texto-sobre" class="texto-sobre"></div>
+                </div>
+
+                <!-- BLOQUE DERECHO -->
+                <div class="bloque-derecho">
+                <img src="./images/Foto-perfil-profesional.png" alt="Carlos Capecchi" title="Carlos Capecchi | Psicología y Sexualidad"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION BARRA AZUL -->
+        <section class="pacientes-atendidos">
+            <h2>¿QUÉ OPINAN MIS CLIENTES?</h2>
+            <div class="contenedor-ppal-pacientes">
+                <div class="contador-contenedor" id="contador">
+                    <div class="contador-numero" id="numero">0</div>
+                    <div class="contador-titulo">Clientes atendidos SATISFACTORIAMENTE</div>
+                    <img class="imagen-customer" src="./images/satisfied-customer.webp" alt="cliente-satisfecho">
+                </div>
+                <div class="contenedor-pacientes">
+                    <h3>Pedro</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum arcu eget tellus tincidunt, id</p>
+                    <!--IMAGEN ESTRELLA-->
+                    <hr />
+                    <h3>Maria</h3>
+                    <p>Egestas lorem ipsum, eu pellentesque odio pellentesque et. Donec eu felis rutrum, vulputate erat sit amet, pulvinar</p>
+                    <!--IMAGEN-->
+                    <hr />
+                    <h3>Ivan</h3>
+                    <p>Ullamcorper leo, vitae pellentesque nibh. Praesent laoreet est sem, et varius tellus accumsan quis. Interdum et </p>
+                    <!--IMAGEN-->
+                    <hr />
+                    <h3>Patty</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum arcu eget tellus tincidunt, id</p>
+                    <!--IMAGEN-->
+
+                </div>
+            </div>
+            
+
+
+
+        </section>
+
+
+        <script>
+        const contador = document.getElementById('contador');
+        const numero = document.getElementById('numero');
+        let iniciado = false;
+
+        function animarContador() {
+            let cantidad = 0;
+            const meta = 3000;
+            const velocidad = 12; // menor = más rápido
+
+            const intervalo = setInterval(() => {
+            cantidad += Math.ceil(meta / 100); // incrementos rápidos
+            numero.textContent = cantidad.toLocaleString();
+
+            if (cantidad >= meta) {
+                numero.classList.add('latido');
+                numero.textContent = meta.toLocaleString() + "+";
+                clearInterval(intervalo);
+            }
+            }, velocidad);
+        }
+
+        function verificarScroll() {
+            const posicion = contador.getBoundingClientRect().top;
+            const alturaVentana = window.innerHeight;
+
+            if (posicion < alturaVentana - 100 && !iniciado) {
+            iniciado = true;
+            contador.classList.add('visible');
+            animarContador();
+            }
+        }
+
+        window.addEventListener('scroll', verificarScroll);
+        </script>
+
+
+        <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Montserrat";
+        }
+        /* ---- MENÚ ---- */
+        img {
+            width: 90px;
+            padding: 0;
+            margin: 0;
+        }
+        .contenedor-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 4;
+        }
+        .lista-menu {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+            gap: 30px;
+        }
+        .link-menu {
+            text-decoration: none;
+            color: cadetblue;
+            font-family: "Merriweather Sans";
+            font-size: 17px;
+        }
+        .link-menu:hover {
+            color: #28545D;
+        }
+
+        /* ENCABEZADO */
+        .encabezado {
+            background-image: url(./images/fondo-encabezado-acerca-de.png);
+            width: 100%;
+            height: 250px;
+        }
+        .encabezado h1 {
+            margin-top: 0;
+            padding-top: 130px;
+            font-family: "Poppins";
+            font-size: 50px;
+            text-align: center;
+            color: #f1faee;
+        }
+        .subtitulo-titular {
+            font-family: "Merriweather Sans";
+            font-size: 20px;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-weight: normal;
+            color: black;
+        }
+        .lista-sobre {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem; 
+        }
+        .lista-elemento {
+            background-color: #5C96A2;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        .lista-elemento:hover {
+            background-color: #3b6a72;
+        }
+        .texto-sobre {
+            margin-top: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            max-width: 70ch;
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+            opacity: 0;
+            transform: translateY(10px);
+            min-height: 60px;
+        }
+        .texto-sobre.mostrar {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .texto-sobre ul {
+            list-style: none; /* quitamos las viñetas */
+            padding-left: 0;
+            margin: 0;
+        }
+        .texto-sobre li {
+            position: relative;
+            padding-left: 2rem; /* deja espacio para el icono */
+            margin-bottom: 0.8rem;
+            color: rgb(71, 118, 119);
+            font-size: 1.05rem;
+        }
+        .texto-sobre li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-image: url("./images/icono-check.png"); /* ruta del ícono */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .titulo {
+            display: flex;
+            justify-content: space-around;
+            line-height: 1.6;
+            gap: 50px;
+            opacity: 0;
+            transform: translateX(120px);
+            animation: barridoDerecha 1.2s ease-out forwards;
+        }
+        @keyframes barridoDerecha {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        }
+        .bloque-derecho {
+            padding-right: 100px;
+        }
+        .bloque-derecho img {
+            height: 500px;
+            width: 370px;
+            border-radius: 18px;
+            margin-top: 50px;
+            margin-right: 100px;
+            opacity: 0.9;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        .bloque-izquierdo {
+            padding: 30px 70px;
+            text-align: justify;
+        }
+        .bloque-izquierdo p {
+            color: rgb(71, 118, 119);
+            font-family: "Merriweather Sans";
+        }
+        .bloque-izquierdo h2 {
+            color: #5C96A2;
+            font-family: "Poppins";
+            font-size: 40px;
+            padding: 0;
+            margin: 0;
+        }
+        .barra-azul {
+            background-image: url(./images/barra-azul.png);
+            width: 1521px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+        }
+        /* SECCION PACIENTES */
+
+        .pacientes-atendidos {
+            background-color: #f9fafc;
+            margin-top: 40px;
+            padding-top: 50px;
+        }
+        .pacientes-atendidos h2 {
+            font-family: "Poppins";
+            color: #28545D;
+            font-size: 35px;
+            text-align: center;
+            padding-top: 0;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        .contenedor-pacientes {
+            background-color: white;
+            width: 600px;
+            height: 500px;
+            border-radius: 15px;
+            margin-right: 140px;
+            padding: 35px 40px;
+        }
+        .contenedor-ppal-pacientes {
+            display: flex;
+            justify-content: space-between;
+        }
+        .imagen-customer {
+            height: 200px;
+            width: 200px;
+            padding-top: 80px;
+        }
+
+        /* SECCION CONTADOR */
+        .contador-contenedor {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            text-align: center;
+            background-color: #6c9ca1; /* tono principal del logo */
+            padding: 20px 10px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            max-width: 500px;
+            margin-left: 100px;
+            height: 180px;
+        }
+
+        .contador-contenedor.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contador-numero {
+            font-size: 80px;
+            font-weight: bold;
+            color: #f1faee;
+        }
+
+        .contador-titulo {
+            font-size: 1.5rem;
+            color: #f1faee;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .latido {
+            animation: latido 0.6s ease-in-out 3;
+        }
+
+        </style>
+        
+
+        
+
+        <script>
+            const botones = document.querySelectorAll(".lista-elemento");
+            const texto = document.getElementById("texto-sobre");
+
+            const contenidos = {
+                formacion: [
+                "<strong>Lic. en Psicología</strong> - Universidad Central de Venezuela (UCV)",
+                "<strong>Esp. en Clínica Mental</strong> - Universidad Central de Venezuela (UCV)",
+                "<strong>Esp. Univ. en Terapia de Pareja</strong> - Universidad Europea Miguel de Cervantes (UEMC)",
+                "<strong>Sexólogo Clínico</strong> - Sociedad Argentina de Sexualidad Humana (SASH)",
+                "<strong>Mgtr. en Psicología Clínica</strong> - Universidad de las Américas (UDLA)",
+                "<strong>Mgtr. en Psicoterapia Bereve</strong> - Universidad San Jorge (USJ), Soc. Española de Medicina Psicosomática y Psicoterapia (SEMPyP)."
+                ],
+                experiencia: [
+                "<strong>Experiencia diversa:</strong> Contextos clínicos, hospitalarios, comunitarios y humanitarios.",
+                "<strong>Atentión integral:</strong> Psicoterapia individual, de pareja, familiar y grupal; acompañamiento a personas vulnerables y en movidad humana.",
+                "<strong>Compotencias técnicas:</strong> Evaluación psicológica, psicoterapia breve, terapia de pareja, intervención en crisis, intervención en sexualidad, educación sexual integral, diseño y tratamiento de trastornos mentales y disfunciones sexuales, coaching ontológico organizacional.",
+                "<strong>Enfoque ético y humano:</strong> Comprensión profunda del sufrimiento humano desde una perspectiva técnica y empática."
+                ],
+                forma: [
+                "<strong>Enfoque integrador:</strong> Combinación de los fundamentos de la psicoterapia breve con herramientas psicodinámicas y de apoyo adaptadas para cada persona/pareja.",
+                "<strong>Espacio terapéutico:</strong> Encuentro compartido basado en la escucha activa, la empatía y el respeto por el ritmo del otro, utiliza técnicas científicas para lograr la comprensión profunda, el desarrollo de objetivos personales y la resolución de problemas.",
+                "<strong>Acompañamiento emocional:</strong> Se promueve el reconocimiento y la comprensión de las emociones, los vínculos y las dinámicas relacionales.",
+                "<strong>Propósito final:</strong> Favorecer una vida alineada con los valores personales, más coherente, satisfactoria, libre y significativa."
+                ],
+                diferencia: [
+                "<strong>Formación sólida:</strong> Base clínica rigurosa combinada con sensibilidad humana y experiencia intercultural.",
+                "<strong>Perspectiva amplia:</strong> Trabajar en contextos de alta complejidad fortalecieron mi comprensión de la mente, las relaciones humanas y el sufrimiento.",
+                "<strong>Mirada empática:</strong> Enfoque respetuoso de la diversidad, libre de juicios y centrado en la comprensión profunda del otro.",
+                "<strong>Compromiso profesional:</strong> Prácticas humanas, cercanas y éticas, sustentadas en la evidencia científica"
+                ]
+            };
+
+            botones.forEach((boton) => {
+                boton.addEventListener("click", () => {
+                const tipo = boton.getAttribute("data-contenido");
+
+                // animación suave de cambio de texto
+                texto.classList.remove("mostrar");
+                setTimeout(() => {
+                    // Genera una lista <ul> con <li> dinámicamente
+                    texto.innerHTML = `
+                    <ul>
+                        ${contenidos[tipo].map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                    `;
+                    texto.classList.add("mostrar");
+                }, 200);
+                });
+            });
+        </script>
+
+
+    </body>
+</html>
