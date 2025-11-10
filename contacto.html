@@ -14,6 +14,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     </head>
        
     <body>
@@ -31,6 +33,37 @@
                 </ul>
             </nav>
         </div>
+
+        <!-- ENCABEZADO -->
+        <section class="encabezado"><h1>Contáctame</h1></section>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="contacto">
+            <div class="container-formulario">
+                <form id="formulario-de-contacto" action="https://formspree.io/f/mzzkrrdy" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" required>
+                    <label for="correo">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    <label for="mensaje">Mensaje o pregunta:</label>
+                    <input id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="mapa">
+                <h2>Encuéntrame en el mapa</h2>
+                <div id="map"></div>
+                <h3>Ordenar otros contactos con link directo: mailto, callto, etc.</h3>
+            </div>
+        </section>
+
+        <seccion class="otros">
+            <div class="container-otros">
+                <h2><span style="background-color: yellow; color: red;">EN CONSTRUCCION ...</span></h2>
+            </div>
+        </seccion>
 
         
 
@@ -65,6 +98,7 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 4;
         }
         .lista-menu {
             display: flex;
@@ -81,6 +115,119 @@
         .link-menu:hover {
             color: #28545D;
         }
+        /* ENCABEZADO */
+        .encabezado {
+            background-image: url(./images/fondo-contacto.png);
+            width: 100%;
+            height: 250px;
+        }
+        .encabezado h1 {
+            margin-top: 0;
+            padding-top: 130px;
+            font-family: "Poppins";
+            font-size: 50px;
+            text-align: center;
+            color: #f1faee;
+        }
+        /* SECCION CONTACTO */
+        .contacto {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .container-formulario {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 50px 60px;
+            margin-top: 30px
+        }
+        /* FORMULARIO DE CONTACTO */
+        #formulario-de-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;            
+        }
+        label {
+            font-weight: 500;
+        }
+        input {
+            width: 300px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: "Montserrat";
+            font-size: 15px;
+            box-sizing: border-box;
+            align-content: center;
+        }
+        button {
+            background-color: #5C96A2;
+            color: white;
+            font-family: "Merriweather Sans";
+            border: none;
+            border-radius: 8px;
+            padding: 10px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 110px;
+            display: block;
+            margin: auto;
+            margin-top: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        /* MAPA */
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+
+
         </style>
+
+
+
+        <script>
+            const lat = -2.1574252;
+            const lng = -79.9051;
+
+            // Inicializar el mapa
+            const map = L.map("map").setView([lat, lng], 13);
+
+            // Capa base de OpenStreetMap
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution: "&copy; OpenStreetMap contributors",
+            }).addTo(map);
+
+            // Detectar sistema (iOS o Android)
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const mapsURL = isIOS
+                ? `http://maps.apple.com/?daddr=${lat},${lng}`
+                : `https://www.google.com/maps?q=${lat},${lng}`;
+
+            // Crear marcador con popup y enlace dinámico
+            L.marker([lat, lng])
+                .addTo(map)
+                .bindPopup(`
+                <b>Consultorio Psicológico</b><br>
+                C. 15 N-O 208, Guayaquil<br>
+                <a href="${mapsURL}" target="_blank" 
+                    style="color:#0077cc; text-decoration:underline;">
+                    Cómo llegar
+                </a>
+                `)
+                .openPopup();
+        </script>
+
+        
+
+
     </body>
 </html>

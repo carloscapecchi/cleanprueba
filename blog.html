@@ -32,6 +32,38 @@
             </nav>
         </div>
 
+        <!-- ENCABEZADO -->
+        <section class="encabezado"><h1>Blog</h1></section>
+
+        <!-- SECCION TITULO -->
+        <section class="titular">
+            <div class="titular-titulo">
+                <h2>ESPACIO DIVULGATIVO</h2>
+                <h3>"Leer es vivir muchas vidas, escribir es darle sentido a la propia"</h3>
+                <p>Busca la(s) entrada de tu preferencia</p>
+            </div>
+
+            <div class="buscador">
+                <input type="text" id="searchInput" placeholder="Buscar posts..." />
+                <button id="searchBtn" aria-label="Buscar">
+                    🔍
+                </button>
+            </div>
+        </section>
+
+        <section class="artículos">
+            <div class="contenedor-post">
+                <h3><span style="background-color: yellow; color: red;">EN CONSTRUCCIÓN CON .JS Y .JSON :'(</span></h3>
+            </div>
+        </section>
+
+        <!-- WHATSAPP -->
+        <section id="whatsapp">
+            <a href="https://wa.me/593939283303">
+                <img class="whatsapp-icon" src="./images/WhatsApp.png">
+            </a>
+        </section>        
+
         <style>
         body {
             padding: 0;
@@ -57,6 +89,7 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 4;
         }
         .lista-menu {
             display: flex;
@@ -72,6 +105,85 @@
         }
         .link-menu:hover {
             color: #28545D;
+        }
+        /* ENCABEZADO */
+        .encabezado {
+            background-image: url(./images/fondo-blog.png);
+            width: 100%;
+            height: 250px;
+        }
+        .encabezado h1 {
+            margin-top: 0;
+            padding-top: 130px;
+            font-family: "Poppins";
+            font-size: 50px;
+            text-align: center;
+            color: #f1faee;
+        }
+        /* TITULAR */
+        .titular {
+            text-align: center;
+        }
+        .titular-titulo h2 {
+            color: #5C96A2;
+            font-family: "Poppins";
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+        .titular-titulo h3 {
+            font-family: "Merriweather Sans";
+            font-size: 20px;
+            font-weight: normal;
+            margin-top: 0;
+        }
+        .titular-titulo p {
+            font-family: "Merriweather Sans";
+            font-weight: normal;
+            color: #477677;
+        }
+        /* BUSCADOR */
+        .buscador {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #searchInput {
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+            width: 350px;
+        }
+
+        #searchBtn {
+            background-color: #50828B;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.2s;
+        }
+
+        #searchBtn:hover {
+            background-color: #28545D;
+        }
+
+
+
+
+        /* WHATSAPP */
+        #whatsapp a {
+            background: none;
+            position: fixed;
+            top: 85%;
+            right: 1%;
+        }
+        .whatsapp-icon {
+            height: 50px;
+            width: 50px;
         }
         </style>
     </body>

@@ -31,9 +31,10 @@
                 </ul>
             </nav>
         </div>
-        
+        <!-- ENCABEZADO -->
         <section class="encabezado"><h1>Sobre Mi</h1></section>
-            
+        
+        <!-- SECCION CONÓCEME -->
         <section class="titular">
             <div class="titulo">
                 <!-- BLOQUE IZQUIERDO -->
@@ -61,43 +62,73 @@
 
                 <!-- BLOQUE DERECHO -->
                 <div class="bloque-derecho">
-                <img src="./images/Foto-perfil-profesional.png" alt="Carlos Capecchi" title="Carlos Capecchi | Psicología y Sexualidad"/>
+                <img src="./images/foto perfil.jpg" alt="Carlos Capecchi" title="Carlos Capecchi | Psicología y Sexualidad"/>
                 </div>
             </div>
         </section>
 
         <!-- SECCION BARRA AZUL -->
         <section class="pacientes-atendidos">
-            <h2>¿QUÉ OPINAN MIS CLIENTES?</h2>
+            <h2>¿QUÉ OPINAN LOS PACIENTES?</h2>
             <div class="contenedor-ppal-pacientes">
                 <div class="contador-contenedor" id="contador">
                     <div class="contador-numero" id="numero">0</div>
-                    <div class="contador-titulo">Clientes atendidos SATISFACTORIAMENTE</div>
+                    <div class="contador-titulo">Pacientes atendidos SATISFACTORIAMENTE</div>
                     <img class="imagen-customer" src="./images/satisfied-customer.webp" alt="cliente-satisfecho">
                 </div>
                 <div class="contenedor-pacientes">
                     <h3>Pedro</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum arcu eget tellus tincidunt, id</p>
-                    <!--IMAGEN ESTRELLA-->
+                    <p>“Su terapia me ayudó a conocerme, sanar heridas y recuperar la confianza en mí mismo.”</p>
                     <hr />
-                    <h3>Maria</h3>
-                    <p>Egestas lorem ipsum, eu pellentesque odio pellentesque et. Donec eu felis rutrum, vulputate erat sit amet, pulvinar</p>
-                    <!--IMAGEN-->
+                    <h3>Maria y Juan</h3>
+                    <p>“Su mirada clínica y humana nos ayudó a entendernos sin juicios y a reencontrar la complicidad.”</p>
                     <hr />
-                    <h3>Ivan</h3>
-                    <p>Ullamcorper leo, vitae pellentesque nibh. Praesent laoreet est sem, et varius tellus accumsan quis. Interdum et </p>
-                    <!--IMAGEN-->
+                    <h3>Ivan y Katy</h3>
+                    <p>“Gracias a su acompañamiento, mi pareja y yo recuperamos la comunicación y el deseo que creíamos perdidos.”</p>
                     <hr />
-                    <h3>Patty</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum arcu eget tellus tincidunt, id</p>
-                    <!--IMAGEN-->
+                    <h3>Daniela</h3>
+                    <p>“Combina una gran sensibilidad con buenas técnicas. Me sentí comprendida y realmente transformada.”</p>
+                    <h5>¡¡¡Todos los datos de identidad y demográficos han sido modificados para salvaguardar la integridad de las personas!!!</h5>
+                </div>
+            </div>
+        </section>
 
+        <section class="sigue-en-contacto">
+            <div class="sigue-en">
+                <h2>SIGUE EN CONTACTO</h2>
+                <h4 class="subtitulo-sigue">Contáctame en redes sociales <span style="font-weight: bolder; color: red; background-color: yellow;">EN CONSTRUCCION :'(</span></h4>
+            </div>
+            <div class="subsec-sigue-en">
+                <div class="instagram">
+                    <a href="https://instagram.com/psic.carloscapecchi/">
+                        <img src="./images/imagen-de-instagram.jpg">
+                    </a>
+                </div>
+
+                <div class="you-tube">
+                    <a href="https://youtu.be/SF1qF5G2Vq0?si=82ySN76gB4Th_chM">
+                        <img src="./images/imagen-video-youtube.png">
+                    </a>
+                </div>
+
+              
+                <div class="encuentrame-en">
+                    <h4>Encuéntrame en redes</h4>
+                    <p>Instagram</p>
+                    <p>Facebook</p>
+                    <p>LinkedIn</p>
+                    <p>TikTok</p>
+                    <p>YouTube</p>
                 </div>
             </div>
             
 
+        </section>
 
-
+        <section id="whatsapp">
+            <a href="https://wa.me/593939283303">
+                <img class="whatsapp-icon" src="./images/WhatsApp.png">
+            </a>
         </section>
 
 
@@ -195,6 +226,8 @@
             text-align: center;
             color: #f1faee;
         }
+
+        /* SECCION CONOCEME */
         .subtitulo-titular {
             font-family: "Merriweather Sans";
             font-size: 20px;
@@ -241,13 +274,13 @@
             transform: translateY(0);
         }
         .texto-sobre ul {
-            list-style: none; /* quitamos las viñetas */
+            list-style: none;
             padding-left: 0;
             margin: 0;
         }
         .texto-sobre li {
             position: relative;
-            padding-left: 2rem; /* deja espacio para el icono */
+            padding-left: 2rem;
             margin-bottom: 0.8rem;
             color: rgb(71, 118, 119);
             font-size: 1.05rem;
@@ -312,21 +345,29 @@
             margin: 0;
             padding: 0;
         }
-        /* SECCION PACIENTES */
-
+        
+        /* QUE OPINAN */
+        h5 {
+            font-family: "Merriweather Sans";
+            font-weight: normal;
+            font-size: 9px;
+            color: #1f4249;
+            margin-top: 30px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
         .pacientes-atendidos {
             background-color: #f9fafc;
             margin-top: 40px;
-            padding-top: 50px;
+            padding-top: 40px;
+            padding-bottom: 70px;
         }
         .pacientes-atendidos h2 {
             font-family: "Poppins";
-            color: #28545D;
-            font-size: 35px;
+            color: #5C96A2;
+            font-size: 40px;
             text-align: center;
-            padding-top: 0;
-            margin-top: 0;
-            margin-bottom: 30px;
+            margin: 10px 0 50px 0;
         }
         .contenedor-pacientes {
             background-color: white;
@@ -334,16 +375,17 @@
             height: 500px;
             border-radius: 15px;
             margin-right: 140px;
-            padding: 35px 40px;
+            padding: 35px 40px 20px 40px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
         .contenedor-ppal-pacientes {
             display: flex;
             justify-content: space-between;
         }
         .imagen-customer {
-            height: 200px;
-            width: 200px;
-            padding-top: 80px;
+            height: 300px;
+            width: 300px;
+            padding-top: 70px;
         }
 
         /* SECCION CONTADOR */
@@ -387,6 +429,60 @@
         .latido {
             animation: latido 0.6s ease-in-out 3;
         }
+
+        /* REVIEWS */
+        .contenedor-pacientes h3 {
+            font-family: "Montserrat";
+            color: #1f4249;
+        }
+        .contenedor-pacientes p {
+            font-family: "Merriweather Sans";
+            color: rgb(71, 118, 119);
+        }
+
+        /* SECCION CONTACTAME EN REDES */
+        .subsec-sigue-en {
+            display: flex;
+            justify-content: space-around;
+        }
+        .instagram img {
+            height: 500px;
+            width: 350px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+        .sigue-en h2 {
+            color: #5C96A2;
+            font-family: "Poppins";
+            font-size: 40px;
+            padding-left: 70px;
+            padding-top: 30px;
+            margin: 0;
+        }
+        .subtitulo-sigue {
+            font-family: "Merriweather Sans";
+            font-size: 20px;
+            padding-left: 70px;
+            font-weight: normal;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .you-tube img {
+            width: 420px;
+            height: 300px;
+        }
+
+        #whatsapp a {
+            background: none;
+            position: fixed;
+            top: 85%;
+            right: 1%;
+        }
+        .whatsapp-icon {
+            height: 50px;
+            width: 50px;
+        }
+
 
         </style>
         

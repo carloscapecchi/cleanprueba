@@ -1,0 +1,17 @@
+[
+  {
+    "titulo": "Cómo mejorar la comunicación en pareja",
+    "descripcion": "Consejos prácticos desde la psicoterapia breve para reencontrarse en el diálogo.",
+    "url": "./post1.html"
+  },
+  {
+    "titulo": "La terapia sexual: más allá del deseo",
+    "descripcion": "Una mirada integradora sobre el cuerpo, la mente y el placer.",
+    "url": "post2.html"
+  },
+  {
+    "titulo": "Duelo amoroso: cuando soltar también es amar",
+    "descripcion": "Cómo afrontar la pérdida afectiva desde una perspectiva clínica y humana.",
+    "url": "post3.html"
+  }
+]
