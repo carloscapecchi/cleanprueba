@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Carlos Capecchi</title>
-        <meta name="viewport" content="width=device-width, user-scaleable=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -14,8 +14,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
     </head>
-       
+
     <body>
         <!-- ---- MENÚ ---- -->
         <div class="contenedor-menu">
@@ -31,40 +34,302 @@
                 </ul>
             </nav>
         </div>
-
         <!-- ENCABEZADO -->
         <section class="encabezado"><h1>Blog</h1></section>
 
-        <!-- SECCION TITULO -->
+        <!-- SECCION TITULAR-->
         <section class="titular">
-            <div class="titular-titulo">
-                <h2>ESPACIO DIVULGATIVO</h2>
-                <h3>"Leer es vivir muchas vidas, escribir es darle sentido a la propia"</h3>
-                <p>Busca la(s) entrada de tu preferencia</p>
+            <h2>📰ESPACIO DIVULGATIVO</h2>
+            <p>"Leer es vivir muchas vidas, escribir es darle sentido a la propia" -.Anónimo</p>
+        </section>
+
+        <!-- SECCION BUSCADOR + TAGS -->
+        <section id="seccion-buscador" aria-label="Buscador de artículos" style="max-width:1200px; margin:0 auto;">
+
+            <!-- BUSCADOR -->
+            <div id="searchArea">
+                <div class="under-searchArea">
+                    <!-- ICON -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.49 21.49 20l-5.99-6zM10 15a5 5 0 110-10 5 5 0 010 10z"></path>
+                    </svg>
+                    <input id="searchInput" type="search" placeholder="Buscar por título, contenido o etiqueta..." aria-label="Buscar en el blog">
+                    <button id="clearSearch" aria-label="Limpiar búsqueda" title="Limpiar" style="background:none;border:none;font-size:16px;cursor:pointer;">✕</button>
+                </div>
+
+                <div class="filtros">
+                    <button id="clearFilters" class="tag-button" aria-label="Limpiar filtros" title="Limpiar filtros">Limpiar etiquetas</button>
+                </div>
             </div>
 
-            <div class="buscador">
-                <input type="text" id="searchInput" placeholder="Buscar posts..." />
-                <button id="searchBtn" aria-label="Buscar">
-                    🔍
-                </button>
+            <!-- CONTENEDOR DE TAGS -->
+            <div id="tagsContainer" aria-label="Etiquetas disponibles">
+                <!-- ETIQUETAS SE INSERTAN CON JS -->
             </div>
         </section>
 
-        <section class="artículos">
-            <div class="contenedor-post">
-                <h3><span style="background-color: yellow; color: red;">EN CONSTRUCCIÓN CON .JS Y .JSON :'(</span></h3>
-            </div>
+        <!-- LISTADO DE ARTÍCULOS -->
+        <section id="postsList" aria-label="Lista de artículos">
+            
+            <article class="post" data-tags="terapia de pareja,relaciones de pareja,conflictos de pareja,comunicación afectiva,autoconocimiento" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/pareja-toxica.jpg" alt="pareja con máscaras de gas" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Enamorados o intoxicados: ¿Cómo son las parejas tóxicas?</h4>
+                    <p>Las relaciones tóxicas no siempre comienzan siendo evidentes; muchas veces se disfrazan de amor intenso o dependencia emocional.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="terapia de pareja">terapia de pareja</span>
+                            <span class="tag-sm" data-tag="relaciones de pareja">relaciones de pareja</span>
+                            <span class="tag-sm" data-tag="conflictos de pareja">conflictos de pareja</span>
+                            <span class="tag-sm" data-tag="comunicación afectiva">comunicación afectiva</span>
+                            <span class="tag-sm" data-tag="autoconocimiento">bienestar psicológico</span>
+                        </div>
+                        <a href="./posts-html/parejas-toxicas/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="sexología clínica,sexualidad,disfunciones sexuales,emociones,proceso terapéutico" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/erectile-dysfunction.jpeg" alt="hombre triste en cama sentado" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Disfunción eréctil: Un problema más allá del cuerpo.</h4>
+                    <p>A veces, los factores psicológicos como el estrés, son los principales responsables de la dificultad para mantener una erección.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="sexología clínica">sexología clínica</span>
+                            <span class="tag-sm" data-tag="sexualidad">sexualidad</span>
+                            <span class="tag-sm" data-tag="disfunciones sexuales">disfunciones sexuales</span>
+                            <span class="tag-sm" data-tag="emociones">emociones</span>
+                            <span class="tag-sm" data-tag="proceso terapéutico">proceso terapéutico</span>
+                        </div>
+                        <a href="./posts-html/disfuncion-erectil/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="psicología clínica,rupturas y duelo amoroso,emociones,salud mental,crecimiento personal" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/grief.png" alt="mujer-sola-en-columpio-duelo" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Cuando se va el otro: Comprendiendo el duelo.</h4>
+                    <p>El duelo no solo implica perder a alguien, sino también aprender a reconstruirse entre el dolor, la ausencia y la transformación interior.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="psicología clínica">psicología clínica</span>
+                            <span class="tag-sm" data-tag="rupturas y duelo amoroso">rupturas y duelo amoroso</span>
+                            <span class="tag-sm" data-tag="emociones">emociones</span>
+                            <span class="tag-sm" data-tag="salud mental">salud mental</span>
+                            <span class="tag-sm" data-tag="crecimiento personal">crecimiento personal</span>
+                            
+                        </div>
+                        <a href="./posts-html/duelo/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="terapia de pareja,conflictos de pareja,intimidad emocional,comunicación afectiva,psicoterapia breve" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/infidelidad.jpg" alt="mujer-sola-en-columpio-duelo" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Infidelidad: Síntomas de una relación que pide cambio.</h4>
+                    <p>La infidelidad no siempre nace del deseo de otro cuerpo, muchas veces surge del intento inconsciente de llenar un vacío emocional o personal.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="terapia de pareja">terapia de pareja</span>
+                            <span class="tag-sm" data-tag="conflictos de pareja">conflictos de pareja</span>
+                            <span class="tag-sm" data-tag="intimidad emocional">intimidad emocional</span>
+                            <span class="tag-sm" data-tag="comunicación afectiva">comunicación afectiva</span>
+                            <span class="tag-sm" data-tag="psicoterapia breve">psicoterapia breve</span>
+                        </div>
+                        <a href="./posts-html/infidelidad/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="psicología clínica,terapia de pareja,relaciones de pareja,conflictos de pareja,autoconocimiento" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/narcisismo.jpg" alt="narciso y eco" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Enamoramiento arrollador: Los peligros del narcisismo.</h4>
+                    <p>El narcisismo va mucho más allá del amor propio: puede convertirse en una forma de relación que gira en torno al poder, la manipulación y la falta de empatía.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="psicología clínica">psicología clínica</span>
+                            <span class="tag-sm" data-tag="terapia de pareja">terapia de pareja</span>
+                            <span class="tag-sm" data-tag="relaciones de pareja">relaciones de pareja</span>
+                            <span class="tag-sm" data-tag="conflictos de pareja">conflictos de pareja</span>
+                            <span class="tag-sm" data-tag="autoconocimiento">autoconocimiento</span>
+                        </div>
+                        <a href="./posts-html/narcisismo/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="psicología clínica,autoestima,emociones,crecimiento personal,bienestar psicológico" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/autoestima.webp" alt="hombre con brazos dibujados detrás" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Autoestima: El arte de valorarse sin compararse.</h4>
+                    <p>La autoestima no se mide por logros ni por aprobación externa, sino por la relación que establecemos con nosotros mismos. Se trata de una valoración que una persona tiene de sí misma.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="psicología clínica">psicología clínica</span>
+                            <span class="tag-sm" data-tag="autoestima">autoestima</span>
+                            <span class="tag-sm" data-tag="emociones">emociones</span>
+                            <span class="tag-sm" data-tag="crecimiento personal">crecimiento personal</span>
+                            <span class="tag-sm" data-tag="bienestar psicológico">bienestar psicológico</span>
+                        </div>
+                        <a href="./posts-html/autoestima/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="sexología clínica,deseo sexual,sexualidad,emociones,proceso terapéutico" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/deseo.jpg" alt="acariciando a mujer" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Querer o no querer: El deseo sexual y sus altibajos.</h4>
+                    <p>El deseo no siempre se mantiene estable: factores psicológicos, emocionales y relacionales influyen en la forma en que conectamos eróticamente con el otro.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="sexología clínica">sexología clínica</span>
+                            <span class="tag-sm" data-tag="deseo sexual">deseo sexual</span>
+                            <span class="tag-sm" data-tag="sexualidad">sexualidad</span>
+                            <span class="tag-sm" data-tag="emociones">emociones</span>
+                            <span class="tag-sm" data-tag="proceso terapéutico">proceso terapéutico</span>
+                        </div>
+                        <a href="./posts-html/deseo-sexual/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="psicología clínica,depresión,salud mental,emociones,psicoterapia breve" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/depresion.webp" alt="depresion arte" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Depresión: Más allá de la tristeza.</h4>
+                    <p>No es solo “estar triste”, la depresión altera la forma en que pensamos, sentimos y percibimos la vida cotidiana. Levantarnos de la cama parece una odisea y sentimos que nos falta energía y motivación para atravesar el día..</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="psicología clínica">psicología clínica</span>
+                            <span class="tag-sm" data-tag="depresión">depresión</span>
+                            <span class="tag-sm" data-tag="salud mental">salud mental</span>
+                            <span class="tag-sm" data-tag="emociones">emociones</span>
+                            <span class="tag-sm" data-tag="psicoterapia breve">psicoterapia breve</span>
+                        </div>
+                        <a href="./posts-html/depresion/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="psicología clínica,emociones,crecimiento personal,autoconocimiento,bienestar psicológico" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/dejar-ir.jpg" alt="dejar ir mariposa" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Dejar ir: El perdón como camino de liberación.</h4>
+                    <p>Perdonar no es justificar, sino soltar el peso emocional que nos impide avanzar y sanar. Perdonar implica tomar la decisión de liberarse del resentimiento y la ira.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="psicología clínica">psicología clínica</span>
+                            <span class="tag-sm" data-tag="emociones">emociones</span>
+                            <span class="tag-sm" data-tag="crecimiento personal">crecimiento personal</span>
+                            <span class="tag-sm" data-tag="autoconocimiento">autoconocimiento</span>
+                            <span class="tag-sm" data-tag="bienestar psicológico">bienestar psicológico</span>
+                        </div>
+                        <a href="./posts-html/dejar-ir/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="sexología clínica,disfunciones sexuales,sexualidad,deseo sexual,educación sexual" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/anorgasmia.jpg" alt="mujer frustrada en cama" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Anorgasmia femenina: Cuando se rompe el silencio.</h4>
+                    <p>La dificultad para alcanzar el orgasmo es más común de lo que se piensa y suele estar relacionada con la educación sexual, la culpa y el miedo a la entrega.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="sexología clínica">sexología clínica</span>
+                            <span class="tag-sm" data-tag="disfunciones sexuales">disfunciones sexuales</span>
+                            <span class="tag-sm" data-tag="sexualidad">sexualidad</span>
+                            <span class="tag-sm" data-tag="deseo sexual">deseo sexual</span>
+                            <span class="tag-sm" data-tag="educación sexual">educación sexual</span>
+                        </div>
+                        <a href="./posts-html/anorgasmia/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="terapia de pareja,relaciones de pareja,dependencia emocional,autoconocimiento,bienestar psicológico" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/dependencia-emocional.jpg" alt="manos atadas con cuerda y corazón" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>Dependencia emocional: Amarse sin perderse.</h4>
+                    <p>La dependencia emocional nos hace creer que sin el otro no podemos vivir, olvidando que el amor sano nace desde la autonomía.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="terapia de pareja">terapia de pareja</span>
+                            <span class="tag-sm" data-tag="relaciones de pareja">relaciones de pareja</span>
+                            <span class="tag-sm" data-tag="dependencia emocional">dependencia emocional</span>
+                            <span class="tag-sm" data-tag="autoconocimiento">autoconocimiento</span>
+                            <span class="tag-sm" data-tag="bienestar psicológico">bienestar psicológico</span>
+                        </div>
+                        <a href="./posts-html/dependencia/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-tags="terapia de pareja,comunicación afectiva,relaciones de pareja,intimidad emocional,proceso terapéutico" tabindex="0">
+                <div class="post-thumb">
+                    <img class="article-image" src="./images/imagenes-blog/comunicacion.webp" alt="pareja comunicándose" loading="lazy">
+                </div>
+                <div class="post-body">
+                    <h4>A-M-O-R: El arte de comunicarse en pareja.</h4>
+                    <p>Hablar no siempre significa comunicarse. La escucha activa y la empatía son pilares del entendimiento mutuo.</p>
+                    <div class="ante-tags">
+                        <div class="post-tags">
+                            <span class="tag-sm" data-tag="terapia de pareja">terapia de pareja</span>
+                            <span class="tag-sm" data-tag="comunicación afectiva">comunicación afectiva</span>
+                            <span class="tag-sm" data-tag="relaciones de pareja">relaciones de pareja</span>
+                            <span class="tag-sm" data-tag="intimidad emocional">intimidad emocional</span>
+                            <span class="tag-sm" data-tag="proceso terapéutico">proceso terapéutico</span>
+                        </div>
+                        <a href="./posts-html/comunicacion-pareja/index.html" class="read-more">Leer</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Insertar artículos aquí -->
+            <!-- Insertar artículos aquí -->
+            <!-- Insertar artículos aquí -->
+            <!-- Insertar artículos aquí -->             
+
         </section>
 
-        <!-- WHATSAPP -->
+        <div id="noResults">No se encontraron artículos que coincidan con tu búsqueda.</div>
+
         <section id="whatsapp">
             <a href="https://wa.me/593939283303">
                 <img class="whatsapp-icon" src="./images/WhatsApp.png">
             </a>
-        </section>        
+        </section>
+    
+    </body>
 
-        <style>
+    <style>
         body {
             padding: 0;
             margin: 0;
@@ -106,6 +371,7 @@
         .link-menu:hover {
             color: #28545D;
         }
+
         /* ENCABEZADO */
         .encabezado {
             background-image: url(./images/fondo-blog.png);
@@ -119,62 +385,194 @@
             font-size: 50px;
             text-align: center;
             color: #f1faee;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        /* TITULAR */
+        /* SECCION TITULAR */
         .titular {
-            text-align: center;
+            opacity: 0;
+            animation: popUp 1.2s ease-out forwards;
+            animation-delay: 0.3s;
         }
-        .titular-titulo h2 {
+        @keyframes popUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .titular h2 {
             color: #5C96A2;
             font-family: "Poppins";
             font-size: 40px;
-            margin-bottom: 0;
+            padding: 0;
+            margin: 50px 0 0 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .titular-titulo h3 {
+        .titular p {
             font-family: "Merriweather Sans";
             font-size: 20px;
+            color: black;
             font-weight: normal;
-            margin-top: 0;
+            margin: 0 0 0 50px;
         }
-        .titular-titulo p {
-            font-family: "Merriweather Sans";
-            font-weight: normal;
-            color: #477677;
-        }
+
         /* BUSCADOR */
-        .buscador {
-            display: inline-flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
+        #searchArea {
+            display:flex; 
+            align-items:center; 
+            gap:14px; 
+            margin-bottom:18px;
+        }
+        .under-searchArea {
+            display:flex; 
+            align-items:center; 
+            gap:10px; 
+            background-color: white; 
+            border: 1px solid black;
+            padding: 10px 12px; 
+            border-radius: 10px; 
+            box-shadow:0 4px 12px rgba(0,0,0,0.2); 
+            flex: 1;
+            margin-top: 50px;
         }
         #searchInput {
-            border: none;
-            outline: none;
-            padding: 10px;
-            font-size: 16px;
-            width: 350px;
+            border:0; 
+            outline:none; 
+            background:transparent; 
+            font-size:16px; 
+            flex:1; 
+            font-family: "Merriweather Sans";
+        }
+        .filtros {
+            display:flex; 
+            gap:10px; 
+            align-items:center;
+        }
+        #clearFilters {
+            padding:8px 12px; 
+            border-radius:10px; 
+            border:1px solid rgba(80,130,139,0.12); 
+            background:transparent; 
+            cursor:pointer;
+            margin-top: 50px;
+        }
+        #tagsContainer {
+            display:flex; 
+            gap:8px; 
+            flex-wrap:wrap; 
+            margin-bottom:22px;
+        }
+        #noResults {
+            max-width:1200px; 
+            margin:18px auto; 
+            color:#666; 
+            display:none; 
+            text-align:center;
         }
 
-        #searchBtn {
-            background-color: #50828B;
-            color: white;
-            border: none;
-            padding: 10px 14px;
-            cursor: pointer;
+        /* SECCION POSTS */
+        #postsList {
+            max-width:1200px; 
+            margin: 0 auto; 
+            display:grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 40px;
+        }
+        .post {
+            background-color: white; 
+            border-radius:10px; 
+            box-shadow:0 6px 18px rgba(0,0,0,0.4); 
+            overflow:hidden;
+        }
+        .post-thumb {
+            height:180px; 
+            background:#ddd;
+        }
+        .article-image {
+            width: 100%; 
+            height:100%; 
+            object-fit: cover;
+        }
+        .post-body {
+            padding:14px 16px; 
+            font-family:"Merriweather Sans";
+        }
+        .post-body h4 {
+            color: #28545D;
+            margin: 0 0 25px; 
             font-size: 18px;
-            transition: background 0.2s;
         }
-
-        #searchBtn:hover {
-            background-color: #28545D;
+        .post-body p {
+            margin: 0 0 10px; 
+            line-height: 1.3;
+            color: cadetblue;
+            font-size: 15px;
         }
-
-
-
-
-        /* WHATSAPP */
+        .ante-tags {
+            display:flex; 
+            justify-content:space-between; 
+            align-items:center;
+        }
+        .post-tags {
+            display:flex; 
+            gap:8px; 
+            flex-wrap:wrap;
+        }
+        .tag-sm {
+            font-size:12px;
+            padding: 8px 8px;
+            border-radius:12px;
+            background:rgba(80, 130, 139, 0.078);
+            color:#28545D;
+            cursor:pointer;
+        }
+        .tag-sm:hover {
+            background-color: #c8c7c7;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .read-more {
+            text-decoration: none;
+            background: #50828b;
+            color: #fff;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        /* TAGS DE FILTRO EN LA PARTE SUPERIOR */
+        .tag-button {
+            background: transparent;
+            border: 1px solid rgba(80,130,139,0.12);
+            padding:8px 12px;
+            border-radius:10px;
+            cursor:pointer;
+            color: #50828b;
+        }
+        /* ESTILO CUANDO EL TAG ESTÁ ACTIVO */
+        .tag-button.active, .tag-button:active, .tag-button[aria-pressed="true"] {
+            background-color: #5C96A2;
+            color: white;
+            border-color: #28545D;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        #seccion-buscador,#postsList {
+            opacity: 0;
+            animation: slideUp 1.2s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         #whatsapp a {
             background: none;
             position: fixed;
@@ -185,6 +583,121 @@
             height: 50px;
             width: 50px;
         }
-        </style>
-    </body>
+
+    </style>
+
+    <script>
+    (function(){
+      // Elementos
+      const posts = Array.from(document.querySelectorAll('.post'));
+      const searchInput = document.getElementById('searchInput');
+      const clearSearchBtn = document.getElementById('clearSearch');
+      const tagsContainer = document.getElementById('tagsContainer');
+      const clearFiltersBtn = document.getElementById('clearFilters');
+      const noResults = document.getElementById('noResults');
+
+      // Normalizar texto (sin acentos, minúsculas)
+      function normalizeText(s){
+        return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      }
+
+      // Construir listado de etiquetas únicas a partir de data-tags
+      const tagMap = {}; // tag -> count
+      posts.forEach(p => {
+        const raw = p.getAttribute('data-tags') || '';
+        raw.split(',').map(t=>t.trim()).filter(Boolean).forEach(t=>{
+          tagMap[t] = (tagMap[t]||0) + 1;
+        });
+      });
+
+      const tags = Object.keys(tagMap).sort();
+
+      // Crear botones de tags en la UI
+      tags.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tag-button';
+        btn.textContent = tag.replace(/-/g,' ');
+        btn.dataset.tag = tag;
+        btn.setAttribute('aria-pressed','false');
+        btn.style.marginRight = '6px';
+        btn.addEventListener('click', () => {
+          const isActive = btn.classList.toggle('active');
+          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          applyFilters();
+        });
+        tagsContainer.appendChild(btn);
+      });
+
+      // event listeners
+      searchInput.addEventListener('input', applyFilters);
+      clearSearchBtn.addEventListener('click', () => { searchInput.value=''; applyFilters(); searchInput.focus(); });
+      clearFiltersBtn.addEventListener('click', () => {
+        // reset all tag buttons
+        tagsContainer.querySelectorAll('.tag-button').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false');});
+        searchInput.value='';
+        applyFilters();
+      });
+
+      function getActiveTags(){
+        return Array.from(tagsContainer.querySelectorAll('.tag-button.active')).map(b => b.dataset.tag);
+      }
+
+      function applyFilters(){
+        const q = normalizeText(searchInput.value.trim());
+        const activeTags = getActiveTags();
+        let visible = 0;
+
+        posts.forEach(post => {
+          const title = normalizeText(post.querySelector('h4').textContent);
+          const excerpt = normalizeText(post.querySelector('p').textContent);
+          const dataTags = (post.getAttribute('data-tags') || '').split(',').map(t=>t.trim());
+
+          const matchesQuery = !q || title.includes(q) || excerpt.includes(q) || dataTags.some(dt => dt.includes(q));
+          const matchesTags = activeTags.length === 0 || dataTags.some(dt => activeTags.includes(dt));
+
+          const show = matchesQuery && matchesTags;
+          post.style.display = show ? 'block' : 'none';
+          if(show) visible++;
+        });
+
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+      }
+
+      // Hacer clickable cada tag pequeña dentro del post para filtrar por esa etiqueta
+      document.querySelectorAll('.tag-sm').forEach(ts => {
+        ts.addEventListener('click', () => {
+          const tagKey = ts.dataset.tag;
+          // activar el botón de filtro correspondiente
+          const btn = Array.from(tagsContainer.querySelectorAll('.tag-button')).find(b => b.dataset.tag === tagKey);
+          if(btn){
+            // Si ya activo, lo desactiva; si no, lo activa y desactiva los demás (comportamiento: toggle)
+            btn.classList.toggle('active');
+            btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+            applyFilters();
+            // scroll to top of posts area for UX
+            document.getElementById('postsList').scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        });
+      });
+
+      // Inicializar (mostrar todos)
+      applyFilters();
+
+      // Accesibilidad: Enter / Space para activar tag-buttons (keyboard)
+      tagsContainer.addEventListener('keydown', (e) => {
+        if(e.target && e.target.matches('.tag-button') && (e.key === 'Enter' || e.key === ' ')){
+          e.preventDefault();
+          e.target.click();
+        }
+      });
+
+    })();
+  </script>
+
+
+
+
+
+
 </html>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Carlos Capecchi</title>
-        <meta name="viewport" content="width=device-width, user-scaleable=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -41,6 +41,7 @@
         <section class="contacto">
             <div class="container-formulario">
                 <form id="formulario-de-contacto" action="https://formspree.io/f/mzzkrrdy" method="post">
+                    <h3>COMPLETA EL FORMULARIO</h3>
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                     <label for="telefono">Teléfono:</label>
@@ -48,30 +49,47 @@
                     <label for="correo">Email:</label>
                     <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                     <label for="mensaje">Mensaje o pregunta:</label>
-                    <input id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required>
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
                     <button type="submit">Enviar</button>
                 </form>
             </div>
             <div class="mapa">
-                <h2>Encuéntrame en el mapa</h2>
+                <h2>📍ENCUÉNTRAME</h2>
                 <div id="map"></div>
-                <h3>Ordenar otros contactos con link directo: mailto, callto, etc.</h3>
+                <div class="formas-de-contacto">
+                    <h2>👤FORMAS DE CONTACTO</h2>
+                    <a href="mailto:carloscapecchi@gmail.com">
+                        <img src="./images/iconos/mail.png"><p>Envíame un e-mail</p>
+                    </a>
+                    <a href="https://wa.me/+593939283303">
+                        <img src="./images/iconos/whatsapp.png"><p>Escríbeme por WhatsApp</p>
+                    </a>
+                    <a href="tel:+593939283303">
+                        <img src="./images/iconos/phone.png"><p>Llámame por teléfono</p>
+                    </a>
+                </div>
             </div>
         </section>
 
         <seccion class="otros">
+            <h2>📱SÍGUEME EN REDES</h2>
             <div class="container-otros">
-                <h2><span style="background-color: yellow; color: red;">EN CONSTRUCCION ...</span></h2>
+                <a href="https://instagram.com/psic.carloscapecchi/">
+                    <img src="./images/iconos/instagram.png"><p>Instagram</p>
+                </a>
+                <a href="https://www.linkedin.com/in/ccapecchi/">
+                    <img src="./images/iconos/linkedin.png"><p>LinkedIn</p>
+                </a>
+                <a href="https://tiktok.com/">
+                    <img src="./images/iconos/tiktok.png"><p>TikTok</p>
+                </a>
+                <a href="https://facebook.com/">
+                    <img src="./images/iconos/facebook.png"><p>Facebook</p>
+                </a>
             </div>
         </seccion>
 
         
-
-
-
-
-
-
 
         <style>
         body {
@@ -128,19 +146,24 @@
             font-size: 50px;
             text-align: center;
             color: #f1faee;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         /* SECCION CONTACTO */
         .contacto {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;            
         }
         .container-formulario {
             background-color: white;
-            border-radius: 15px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 50px 60px;
-            margin-top: 30px
+            padding: 2.5rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 420px;
+            text-align: left;
+            box-sizing: border-box;
+            margin: 60px 0 0 160px;
         }
         /* FORMULARIO DE CONTACTO */
         #formulario-de-contacto {
@@ -148,17 +171,37 @@
             flex-direction: column;
             gap: 10px;            
         }
+        h3 {
+            font-family: "Merriweather Sans";
+            text-align: center;
+            color: #28545D;
+            font-size: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
         label {
             font-weight: 500;
         }
-        input {
-            width: 300px;
-            padding: 12px;
+        input, textarea {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: "Montserrat";
-            font-size: 15px;
+            font-size: 0.95rem;
             box-sizing: border-box;
+            display: block;
+            margin: 0 auto 0.8rem auto;
+        }
+        input {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: "Montserrat";
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto 1rem auto;
             align-content: center;
         }
         button {
@@ -173,7 +216,6 @@
             width: 110px;
             display: block;
             margin: auto;
-            margin-top: 16px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         button:hover {
@@ -183,12 +225,52 @@
         /* MAPA */
         #map {
             height: 400px;
-            width: 100%;
+            width: 550px;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 2;
         }
-
-
+        .mapa h2 {
+            color: #5C96A2;
+            font-family: "Poppins";
+            font-size: 35px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+        .formas-de-contacto h2 {
+            color: #5C96A2;
+            font-family: "Poppins";
+            font-size: 35px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .formas-de-contacto img {
+            width: 40px;
+            height: 40px;
+        }
+        .formas-de-contacto a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .container-otros {
+            display: flex;
+            gap: 20px;
+        }
+        .otros h2 {
+            color: #5C96A2;
+            font-family: "Poppins";
+            font-size: 35px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .container-otros a {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* separa la imagen del texto */
+            text-decoration: none;
+            color: inherit;
+        }
 
         </style>
 

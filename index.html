@@ -14,36 +14,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <meta name="viewport" content="width=device-width, user-scaleable=no">
-    </head>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const slides = document.querySelectorAll(".faq-slide");
-        const prevBtn = document.getElementById("prev");
-        const nextBtn = document.getElementById("next");
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === index);
-            });
-        }
-
-        prevBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        });
-
-        nextBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        });
-
-        // Mostrar la primera al cargar
-        showSlide(currentIndex);
-        });
-    </script>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>  
 
     <body>
         <!-- MENÚ -->
@@ -51,6 +23,11 @@
             <a class="logo-menu" href="./index.html">
                 <img src="./images/Logo-solo-vector.png" alt="logo-profesional">
             </a>
+            <div class="menu-hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav>
                 <ul class="lista-menu">
                     <li class="elemento-menu"><a class="link-menu" href="./acerca-de.html">Acerca de</a></li>
@@ -103,14 +80,14 @@
 
         <!-- SECCION DE SERVICIOS -->
         <section class="servicios-contenedor">
-            <h2>DESCUBRE MIS SERVICIOS</h2>
+            <h2>✨DESCUBRE MIS SERVICIOS</h2>
             <p>Conecta contigo, con el otro y con tu deseo</p>
 
             <div class="contenedor-de-servicios">
                 <article class="servicio">
                     <img src="./images/Therapy.png" alt="terapia-individual">
                     <h3>
-                        <a href="./servicios.html#psychotherapy">Psicoterapia Individual</a>
+                        <a href="./servicios.html#psychotherapy">🧠Psicoterapia Individual</a>
                     </h3>
                     <p>Espacio de acompañamiento profesional para explorar tus emociones, pensamientos y conductas. A través del proceso terapéutico podrás identificar patrones relacionales, fortalecer tus recursos personales, afrontar situaciones difíciles y mejorar tu bienestar emocional.</p>
                 </article>
@@ -118,7 +95,7 @@
                 <article class="servicio">
                     <img src="./images/Couple.png" alt="terapia-de-pareja">
                     <h3>
-                        <a href="./servicios.html#couple-therapy">Terapia de Pareja</a>
+                        <a href="./servicios.html#couple-therapy">💞Terapia de Pareja</a>
                     </h3>
                     <p>Es un espacio de diálogo guiado donde ambos miembros de la pareja pueden reencontrarse, mejorar la comunicación y reconstruir la confianza. El objetivo es promover vínculos más saludables y una convivencia basada en el respeto mutuo.</p>
                 </article>
@@ -126,7 +103,7 @@
                 <article class="servicio">
                     <img src="./images/Sex.png" alt="terapia-sexual">
                     <h3>
-                        <a href="./servicios.html#sex-therapy">Terapia Sexual</a>
+                        <a href="./servicios.html#sex-therapy">💗Terapia Sexual</a>
                     </h3>
                     <p>Dirigida a personas o parejas que enfrentan dificultades en su vida íntima. Se abordan temas como el deseo, el erotismo, disfunciones o insatisfacción; favoreciendo una sexualidad más plena, libre de tabúes y conectada con el bienestar integral.</p>
                 </article>
@@ -134,7 +111,7 @@
                 <article class="servicio">
                     <img src="./images/Assessment.png" alt="evaluación-psicologica">
                     <h3>
-                        <a href="./servicios.html#assessment-psico">Evaluación Psicológica</a>
+                        <a href="./servicios.html#assessment-psico">🧩Evaluación Psicológica</a>
                     </h3>
                     <p>Un proceso riguroso y confidencial que permite comprender el funcionamiento cognitivo, afectivo-social y conductual de una persona. Se utilizan pruebas estandarizadas para orientar diagnósticos, tratamientos o decisiones personales y laborales.</p>
                 </article>
@@ -142,7 +119,7 @@
                 <article class="servicio">
                     <img src="./images/kids.png" alt="diagnostico-infantil">
                     <h3>
-                        <a href="./servicios.html#infantil">Psicodiagnóstico Infanto-Juvenil</a>
+                        <a href="./servicios.html#infantil">🧸Psicodiagnóstico Infanto-Juvenil</a>
                     </h3>
                     <p>Evaluación especializada que busca comprender el desarrollo emocional, cognitivo y social de niños, niñas y adolescentes. Permite detectar áreas de mejora, orientar intervenciones y acompañar a las familias en el proceso de crecimiento.</p>
                 </article>
@@ -150,7 +127,7 @@
                 <article class="servicio">
                     <img src="./images/Consultancy.png" alt="asesoria-empresarial">
                     <h3>
-                        <a href="./servicios.html#consultant">Asesoría Empresarial</a>
+                        <a href="./servicios.html#consultant">📊Asesoría Empresarial</a>
                     </h3>
                     <p>Servicio enfocado en el bienestar psicológico y el clima laboral dentro de las organizaciones. A través de la evaluación y orientación profesional, se promueve la productividad, la comunicación efectiva y la salud mental en el trabajo.</p>
                 </article> 
@@ -160,7 +137,6 @@
         <!-- SECCION DE FAQ -->
         <section class="seccion-faq">
             <h2>PREGUNTAS FRECUENTES (FAQ)</h2>
-
             <div class="faq-wrapper">
                 <img class="faq-icon" src="./images/wonder-brain.webp" alt="man-wondering">
                 <div class="faq-container">
@@ -208,7 +184,7 @@
 
         <!-- BLOG -->
         <section class="blog">
-            <h2>BLOG-GUEANDO</h2>
+            <h2>💭BLOG-GUEANDO</h2>
             <p class="subtitulo-blog">Reflexión, opinión e investigación en psicología y sexualidad</p>
             
             <div class="contenedor-blog">
@@ -246,9 +222,6 @@
             </div>
         </section>
 
-
-
-
         <!-- FOOTER -->
         <section id="footer">
             <div class="contenedor-footer">
@@ -263,33 +236,7 @@
                 <img class="whatsapp-icon" src="./images/WhatsApp.png">
             </a>
         </section>
-
-        <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-        </div>
-
-        <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".menu-list");
-
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        });
-
-        // Cierra el menú al hacer click en un enlace
-        document.querySelectorAll(".menu-list a").forEach(link =>
-            link.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-            })
-        );
-        </script>
-
-
-
+        
     <style>
         body {
             padding: 0;
@@ -423,6 +370,7 @@
             text-shadow: none;
             color: #5C96A2;
             font-family: "Poppins";
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .bloque-dercho {
             flex: 1;
@@ -497,6 +445,7 @@
             margin-left: 112px;
             font-size: 40px;
             margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .servicios-contenedor p {
             text-align: left;
@@ -564,6 +513,7 @@
             color: #5C96A2;
             font-family: "Poppins";
             font-size: 35px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .faq-wrapper {
             position: relative;
@@ -616,11 +566,27 @@
             margin-bottom: 45px;
             line-height: 1.6;
         }
+
         /* ANIMACION FAQ */
         @keyframes fade {
             from { opacity: 0; transform: translateX(15px); }
             to { opacity: 1; transform: translateX(0); }
         }
+
+        /* RESPONSIVENESS */
+        @media screen and (max-width: 700px) {
+            .faq-container {
+                width: 95%;       
+                padding: 20px 20px; 
+                font-size: 15px; 
+            }
+            .faq-slide p {
+                font-size: 14px;  
+                line-height: 1.5;
+            }
+        }
+
+
         /* CONTROLES FAQ */
         .faq-controls {
             position: absolute;
@@ -660,6 +626,7 @@
             margin-left: 112px;
             font-size: 40px;
             margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .subtitulo-blog {
@@ -761,6 +728,8 @@
             text-align: center;
             font-size: 13px;
         }
+
+        /*  WHATSAPP  */
         #whatsapp a {
             background: none;
             position: fixed;
@@ -775,31 +744,157 @@
             text-decoration: none;
             color: white;
         }
+        /* MENÚ HAMBURGUESA */
+        .menu-hamburguesa {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 70px;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 10;
+            display: none;
+        }
+        .menu-hamburguesa span {
+            height: 3px;
+            width: 25px;
+            background: #28545D;
+            margin: 5px 0;
+            border-radius: 3px;
+            transition: 0.4s;
+        }
+
+        /* Animación cuando está activo */
+        .menu-hamburguesa.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-hamburguesa.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-hamburguesa.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        /* --- MEDIA QUERY MÓVIL 360px --- */
+        @media screen and (max-width: 480px) {
+            .lista-menu {
+                position: fixed;
+                top: 70px; /* debajo del header */
+                right: -100%;
+                flex-direction: column;
+                width: 70%;
+                height: 100vh;
+                background: rgba(255,255,255,0.95);
+                gap: 30px;
+                padding-top: 50px;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+            }
+            .lista-menu.show {
+                right: 0;
+            }
+            .contenedor-menu {
+                justify-content: space-between;
+                padding: 0 20px;
+            }
+            .menu-hamburguesa {
+                display: flex;
+            }
+            .titular-texto {
+                padding-left: 20px;
+                text-align: center;
+            }
+            .bloque-izquierdo, .bloque-dercho {
+                flex: 1 1 100%;
+                max-width: 100%;
+                text-align: center;
+                padding: 0 20px;
+            }
+            .contenedor-contacto {
+                flex-direction: column;
+                gap: 30px;
+                padding: 0 20px;
+            }
+            .servicios-contenedor h2, .servicios-contenedor p,
+            .blog h2, .subtitulo-blog {
+                margin-left: 20px;
+            }
+            .contenedor-de-servicios, .contenedor-blog {
+                padding: 0 20px;
+            }
+        }
+
+
+
 
     </style>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const publicaciones = document.querySelectorAll(".publicacion");
-        const imagenes = document.querySelectorAll(".faq-icon");
-        const servicios = document.querySelectorAll(".servicio");
-        
-        const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target); // Evita reanimar al hacer scroll hacia arriba
-            }
-        });
-        }, { threshold: 0.3 }); // 20% visible para activar
+        document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".faq-slide");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+        let currentIndex = 0;
 
-        publicaciones.forEach(pub => observer.observe(pub));
-        imagenes.forEach(img => observer.observe(img));
-        servicios.forEach(servicio => observer.observe(servicio));
-    });
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+            });
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        });
+
+        showSlide(currentIndex);
+        });
     </script>
 
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const publicaciones = document.querySelectorAll(".publicacion");
+            const imagenes = document.querySelectorAll(".faq-icon");
+            const servicios = document.querySelectorAll(".servicio");
+            
+            const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Evita reanimar al hacer scroll hacia arriba
+                }
+            });
+            }, { threshold: 0.3 }); // 20% visible para activar
+
+            publicaciones.forEach(pub => observer.observe(pub));
+            imagenes.forEach(img => observer.observe(img));
+            servicios.forEach(servicio => observer.observe(servicio));
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.querySelector(".menu-hamburguesa");
+        const menu = document.querySelector(".lista-menu");
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("show");
+            menuBtn.classList.toggle("active");
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll(".lista-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("show");
+                menuBtn.classList.remove("active");
+            });
+        });
+    });
+    </script>
 
 
     </body>

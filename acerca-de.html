@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Carlos Capecchi</title>
-        <meta name="viewport" content="width=device-width, user-scaleable=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
             <div class="titulo">
                 <!-- BLOQUE IZQUIERDO -->
                 <div class="bloque-izquierdo">
-                <h2>TE INVITO A CONOCERME</h2>
+                <h2>💡TE INVITO A CONOCERME</h2>
                 <h4 class="subtitulo-titular">Profesional apasionado por la salud mental y sexual</h4>
                 <p>
                     A lo largo de mi formación he integrado una sólida base teórica con una
@@ -69,7 +69,7 @@
 
         <!-- SECCION BARRA AZUL -->
         <section class="pacientes-atendidos">
-            <h2>¿QUÉ OPINAN LOS PACIENTES?</h2>
+            <h2>¿QUÉ OPINAN MIS PACIENTES?</h2>
             <div class="contenedor-ppal-pacientes">
                 <div class="contador-contenedor" id="contador">
                     <div class="contador-numero" id="numero">0</div>
@@ -83,46 +83,32 @@
                     <h3>Maria y Juan</h3>
                     <p>“Su mirada clínica y humana nos ayudó a entendernos sin juicios y a reencontrar la complicidad.”</p>
                     <hr />
-                    <h3>Ivan y Katy</h3>
+                    <h3>Carolina</h3>
                     <p>“Gracias a su acompañamiento, mi pareja y yo recuperamos la comunicación y el deseo que creíamos perdidos.”</p>
                     <hr />
                     <h3>Daniela</h3>
                     <p>“Combina una gran sensibilidad con buenas técnicas. Me sentí comprendida y realmente transformada.”</p>
-                    <h5>¡¡¡Todos los datos de identidad y demográficos han sido modificados para salvaguardar la integridad de las personas!!!</h5>
+                    <h5>⚠️Todos los datos de identidad y demográficos han sido modificados para salvaguardar la integridad de las personas</h5>
                 </div>
             </div>
         </section>
 
-        <section class="sigue-en-contacto">
-            <div class="sigue-en">
-                <h2>SIGUE EN CONTACTO</h2>
-                <h4 class="subtitulo-sigue">Contáctame en redes sociales <span style="font-weight: bolder; color: red; background-color: yellow;">EN CONSTRUCCION :'(</span></h4>
+        <section class="otros-datos">
+            <div class="otros">
+                <h2>🌿10 DATOS CURIOSOS</h2>
+                <ol>
+                    <li><span style="font-weight: bold;">Creo en la capacidad humana de reinventarse.</span> He visto cómo, incluso en los momentos más difíciles, las personas logran reconstruirse y encontrar un nuevo sentido.</li>
+                    <li><span style="font-weight: bold;">Me gusta escuchar historias.</span> Cada vida tiene matices únicos y acompañar a alguien a entener los suyos es una de las partes más bonitas de mi trabajo.</li>
+                    <li><span style="font-weight: bold;">Valoro la calma y las conversaciones con pausa.</span> En un mundo acelerado, detenernos a pensar y sentir con tiempo, puede ser profundamente sanador.</li>
+                    <li><span style="font-weight: bold;">Disfruto aprender y seguir formándome.</span> Estudiar no es solo una forma de exigencia profesional sino una forma de mantener vivas la curiosidad y la empatía.</li>
+                    <li><span style="font-weight: bold;">Encuentro en el silencio un lenguaje propio.</span> A veces no hace falta decir mucho; estar presente, escuchar y sostener también comunican.</li>
+                    <li><span style="font-weight: bold;">Me inspiran los encuentros humanos.</span> Conectar genuinamente con alguien, ver cómo avanza, cómo se comprende o se perdona, me recuerda por qué elegí esta profesión.</li>
+                    <li><span style="font-weight: bold;">Trabajo desde la autenticidad.</span> Cada persona necesita algo distinto, y por eso intento que cada proceso terapéutico sea único, sin fórmulas rígidas.</li>
+                    <li><span style="font-weight: bold;">Creo en la ternura como una forma de cuidado.</span> Ser escuchado con respeto y sin juicios puede abrir espacios internos que estaban cerrados por mucho tiempo.</li>
+                    <li><span style="font-weight: bold;">Me conmueven los comienzos.</span> Las primeras palabras, los silencios incómodos, los pequeños pasos... ahí suele nacer el cambio verdadero.</li>
+                    <li><span style="font-weight: bold;">Acompañar es mi manera de estar en el mundo.</span> Siento que ayudar a otros a vivir con más coherencia, libertad y sentido también me transforma a mí.</li>
+                </ol>
             </div>
-            <div class="subsec-sigue-en">
-                <div class="instagram">
-                    <a href="https://instagram.com/psic.carloscapecchi/">
-                        <img src="./images/imagen-de-instagram.jpg">
-                    </a>
-                </div>
-
-                <div class="you-tube">
-                    <a href="https://youtu.be/SF1qF5G2Vq0?si=82ySN76gB4Th_chM">
-                        <img src="./images/imagen-video-youtube.png">
-                    </a>
-                </div>
-
-              
-                <div class="encuentrame-en">
-                    <h4>Encuéntrame en redes</h4>
-                    <p>Instagram</p>
-                    <p>Facebook</p>
-                    <p>LinkedIn</p>
-                    <p>TikTok</p>
-                    <p>YouTube</p>
-                </div>
-            </div>
-            
-
         </section>
 
         <section id="whatsapp">
@@ -133,39 +119,39 @@
 
 
         <script>
-        const contador = document.getElementById('contador');
-        const numero = document.getElementById('numero');
-        let iniciado = false;
+            const contador = document.getElementById('contador');
+            const numero = document.getElementById('numero');
+            let iniciado = false;
 
-        function animarContador() {
-            let cantidad = 0;
-            const meta = 3000;
-            const velocidad = 12; // menor = más rápido
+            function animarContador() {
+                let cantidad = 0;
+                const meta = 3000;
+                const velocidad = 12; // menor = más rápido
 
-            const intervalo = setInterval(() => {
-            cantidad += Math.ceil(meta / 100); // incrementos rápidos
-            numero.textContent = cantidad.toLocaleString();
+                const intervalo = setInterval(() => {
+                cantidad += Math.ceil(meta / 100); // incrementos rápidos
+                numero.textContent = cantidad.toLocaleString();
 
-            if (cantidad >= meta) {
-                numero.classList.add('latido');
-                numero.textContent = meta.toLocaleString() + "+";
-                clearInterval(intervalo);
+                if (cantidad >= meta) {
+                    numero.classList.add('latido');
+                    numero.textContent = meta.toLocaleString() + "+";
+                    clearInterval(intervalo);
+                }
+                }, velocidad);
             }
-            }, velocidad);
-        }
 
-        function verificarScroll() {
-            const posicion = contador.getBoundingClientRect().top;
-            const alturaVentana = window.innerHeight;
+            function verificarScroll() {
+                const posicion = contador.getBoundingClientRect().top;
+                const alturaVentana = window.innerHeight;
 
-            if (posicion < alturaVentana - 100 && !iniciado) {
-            iniciado = true;
-            contador.classList.add('visible');
-            animarContador();
+                if (posicion < alturaVentana - 100 && !iniciado) {
+                iniciado = true;
+                contador.classList.add('visible');
+                animarContador();
+                }
             }
-        }
-
-        window.addEventListener('scroll', verificarScroll);
+            window.addEventListener('scroll', verificarScroll);
+        
         </script>
 
 
@@ -225,6 +211,7 @@
             font-size: 50px;
             text-align: center;
             color: #f1faee;
+            text-shadow: 2px 4px rgba(0,0,0,0.3)
         }
 
         /* SECCION CONOCEME */
@@ -305,6 +292,7 @@
             transform: translateX(120px);
             animation: barridoDerecha 1.2s ease-out forwards;
         }
+        
         @keyframes barridoDerecha {
         to {
             opacity: 1;
@@ -337,6 +325,7 @@
             font-size: 40px;
             padding: 0;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .barra-azul {
             background-image: url(./images/barra-azul.png);
@@ -350,7 +339,7 @@
         h5 {
             font-family: "Merriweather Sans";
             font-weight: normal;
-            font-size: 9px;
+            font-size: 10px;
             color: #1f4249;
             margin-top: 30px;
             margin-bottom: 0;
@@ -368,6 +357,7 @@
             font-size: 40px;
             text-align: center;
             margin: 10px 0 50px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .contenedor-pacientes {
             background-color: white;
@@ -383,9 +373,16 @@
             justify-content: space-between;
         }
         .imagen-customer {
-            height: 300px;
-            width: 300px;
-            padding-top: 70px;
+            height: 250px;
+            width: 250px;
+            margin-top: 60px;
+            padding-top: 4px;
+            object-fit: cover;
+            background-color: white;
+            border: 10px solid white;
+            border-bottom: 60px solid white;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transform: rotate(-4deg);
         }
 
         /* SECCION CONTADOR */
@@ -440,38 +437,27 @@
             color: rgb(71, 118, 119);
         }
 
-        /* SECCION CONTACTAME EN REDES */
-        .subsec-sigue-en {
-            display: flex;
-            justify-content: space-around;
-        }
-        .instagram img {
-            height: 500px;
-            width: 350px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-        }
-        .sigue-en h2 {
+        /* OTROS DATOS */
+        
+        .otros h2 {
             color: #5C96A2;
             font-family: "Poppins";
             font-size: 40px;
-            padding-left: 70px;
-            padding-top: 30px;
+            padding: 60px 70px 15px 70px;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .subtitulo-sigue {
+        .otros ol {
+            color: #477677;
             font-family: "Merriweather Sans";
-            font-size: 20px;
-            padding-left: 70px;
-            font-weight: normal;
-            padding-top: 0;
-            margin-top: 0;
-        }
-        .you-tube img {
-            width: 420px;
-            height: 300px;
+            font-size: 16px;
+            line-height: 35px;
+            text-align: justify;
+            padding: 0 65px 50px 65px;
         }
 
+        
+        /* WHATSAPP */
         #whatsapp a {
             background: none;
             position: fixed;
@@ -505,7 +491,7 @@
                 experiencia: [
                 "<strong>Experiencia diversa:</strong> Contextos clínicos, hospitalarios, comunitarios y humanitarios.",
                 "<strong>Atentión integral:</strong> Psicoterapia individual, de pareja, familiar y grupal; acompañamiento a personas vulnerables y en movidad humana.",
-                "<strong>Compotencias técnicas:</strong> Evaluación psicológica, psicoterapia breve, terapia de pareja, intervención en crisis, intervención en sexualidad, educación sexual integral, diseño y tratamiento de trastornos mentales y disfunciones sexuales, coaching ontológico organizacional.",
+                "<strong>Competencias técnicas:</strong> Evaluación psicológica, psicoterapia breve, terapia de pareja, intervención en crisis, intervención en sexualidad, educación sexual integral, diseño y tratamiento de trastornos mentales y disfunciones sexuales, coaching ontológico organizacional.",
                 "<strong>Enfoque ético y humano:</strong> Comprensión profunda del sufrimiento humano desde una perspectiva técnica y empática."
                 ],
                 forma: [
