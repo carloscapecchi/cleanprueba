@@ -25,6 +25,11 @@
             <a class="logo-menu" href="./index.html">
                 <img src="./images/Logo-solo-vector.png" alt="logo-profesional">
             </a>
+            <div class="menu-hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav>
                 <ul class="lista-menu">
                     <li class="elemento-menu"><a class="link-menu" href="./acerca-de.html">Acerca de</a></li>
@@ -584,6 +589,204 @@
             width: 50px;
         }
 
+        /* MENÚ HAMBURGUESA */
+        .menu-hamburguesa {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 70px;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 10;
+            display: none;
+        }
+        .menu-hamburguesa span {
+            height: 3px;
+            width: 25px;
+            background: #28545D;
+            margin: 5px 0;
+            border-radius: 3px;
+            transition: 0.4s;
+        }
+
+        /* Animación cuando está activo */
+        .menu-hamburguesa.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-hamburguesa.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-hamburguesa.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        /* --- MEDIA QUERY MÓVIL 360px --- */
+        @media screen and (max-width: 480px) {
+            .lista-menu {
+                position: fixed;
+                top: 70px; /* debajo del header */
+                right: -100%;
+                flex-direction: column;
+                width: 70%;
+                height: 100vh;
+                background: rgba(255,255,255,0.95);
+                gap: 30px;
+                padding-top: 50px;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+            }
+            .lista-menu.show {
+                right: 0;
+            }
+            .contenedor-menu {
+                justify-content: space-between;
+                padding: 0 20px;
+            }
+            .menu-hamburguesa {
+                display: flex;
+            }
+            /* ---- ENCABEZADO ---- */
+           .encabezado {
+                height: 180px;
+                background-size: cover;
+                background-position: center;
+            }
+            .encabezado h1 {
+                padding-top: 95px;
+                font-size: 32px;
+            }
+
+            /* ---- TITULAR ---- */
+            .titular {
+                padding-right: 50px;
+            }
+
+            .titular h2 {
+                font-size: 20px;
+            }
+
+            .titular p {
+                font-size: 14px;
+                padding: 15px 10px;
+            }
+
+            /* ---- BUSCADOR ---- */
+            #seccion-buscador {
+                padding: 0 15px;
+                width: 100%;
+            }
+
+            #searchArea {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .under-searchArea {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            #searchInput {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .filtros {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            #tagsContainer {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            #postsList {
+                display: flex;
+                flex-direction: column;   /* una debajo de la otra */
+                align-items: center;      /* centradas */
+                gap: 20px;                /* espacio entre posts */
+                width: 100%;
+            }
+
+            /* Cada tarjeta/post */
+            .post {
+                width: 90%;               /* centradas con márgenes */
+                max-width: 400px;         /* evita que se hagan gigantes */
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin: 0 auto;           /* centrado horizontal */
+            }
+
+            /* Imagen del post */
+            .post-thumb img {
+                width: 100%;
+                height: 182px;
+                border-radius: 12px;
+                object-fit: cover;
+            }
+
+
+
+            .post-body h4 {
+                font-size: 18px;
+            }
+
+            .post-body p {
+                font-size: 14px;
+            }
+
+            .post-tags {
+                flex-wrap: wrap;
+            }
+
+            .tag-sm {
+                font-size: 12px;
+                padding: 4px 6px;
+            }
+
+            .read-more {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+
+            /* ---- BOTÓN WHATSAPP ---- */
+            #whatsapp img {
+                width: 55px;
+                bottom: 25px;
+                right: 20px;
+            }
+        }
+
+        /* ================================
+        ESPECÍFICO PARA 360px DE ANCHO
+        =================================*/
+        @media (max-width: 390px) {
+
+            nav {
+                width: 75%;
+            }
+
+            .post-body h4 {
+                font-size: 16px;
+            }
+
+            .post-body p {
+                font-size: 13px;
+            }
+
+            .tag-sm {
+                font-size: 11px;
+            }
+
+            .read-more {
+                font-size: 13px;
+            }
+        }
+
+
     </style>
 
     <script>
@@ -695,9 +898,24 @@
     })();
   </script>
 
+  <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.querySelector(".menu-hamburguesa");
+        const menu = document.querySelector(".lista-menu");
 
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("show");
+            menuBtn.classList.toggle("active");
+        });
 
-
-
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll(".lista-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("show");
+                menuBtn.classList.remove("active");
+            });
+        });
+    });
+    </script>
 
 </html>

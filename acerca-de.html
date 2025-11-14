@@ -22,6 +22,11 @@
             <a class="logo-menu" href="./index.html">
                 <img src="./images/Logo-solo-vector.png" alt="logo-profesional">
             </a>
+            <div class="menu-hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav>
                 <ul class="lista-menu">
                     <li class="elemento-menu"><a class="link-menu" href="./acerca-de.html">Acerca de</a></li>
@@ -367,6 +372,13 @@
             margin-right: 140px;
             padding: 35px 40px 20px 40px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(40px); /* aparece desde abajo */
+            transition: all 0.6s ease-out;
+        }
+        .contenedor-pacientes.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .contenedor-ppal-pacientes {
             display: flex;
@@ -469,6 +481,177 @@
             width: 50px;
         }
 
+        .menu-hamburguesa {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 70px;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 10;
+            display: none;
+        }
+        .menu-hamburguesa span {
+            height: 3px;
+            width: 25px;
+            background: #28545D;
+            margin: 5px 0;
+            border-radius: 3px;
+            transition: 0.4s;
+        }
+
+        /* Animación cuando está activo */
+        .menu-hamburguesa.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-hamburguesa.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-hamburguesa.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        /* --- MEDIA QUERY MÓVIL 360px --- */
+        @media screen and (max-width: 480px) {
+            .lista-menu {
+                position: fixed;
+                top: 70px; /* debajo del header */
+                right: -100%;
+                flex-direction: column;
+                width: 70%;
+                height: 100vh;
+                background: rgba(255,255,255,0.95);
+                gap: 30px;
+                padding-top: 50px;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+            }
+            .lista-menu.show {
+                right: 0;
+            }
+            .contenedor-menu {
+                justify-content: space-between;
+                padding: 0 20px;
+            }
+            .menu-hamburguesa {
+                display: flex;
+            }
+            /* -------- ENCABEZADO -------- */
+            .encabezado {
+                height: 180px;
+                background-size: cover;
+                background-position: center;
+            }
+            .encabezado h1 {
+                padding-top: 95px;
+                font-size: 32px;
+            }
+
+            /* -------- SECCIÓN CONÓCEME -------- */
+            .titulo {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .bloque-izquierdo {
+                padding: 20px 25px;
+            }
+            .bloque-izquierdo h2 {
+                font-size: 28px;
+                text-align: center;
+            }
+            .subtitulo-titular {
+                text-align: center;
+                font-size: 16px;
+            }
+            .bloque-izquierdo p {
+                font-size: 14px;
+            }
+
+            .bloque-derecho {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+            }
+            .bloque-derecho img {
+                width: 260px;
+                height: auto;
+                margin: 20px 0 0 0;
+            }
+
+            .lista-sobre {
+                justify-content: center;
+            }
+
+            .texto-sobre {
+                max-width: 100%;
+                font-size: 15px;
+            }
+
+            /* ------- CONTADOR + TESTIMONIOS ------- */
+            .contenedor-ppal-pacientes {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .contador-contenedor {
+                width: 90%;
+                margin: 0;
+                height: auto;
+            }
+            .contador-numero {
+                font-size: 55px;
+            }
+            .contador-titulo {
+                font-size: 1.2rem;
+            }
+
+            .imagen-customer {
+                width: 160px;
+                height: 160px;
+                margin: 20px auto 0;
+                display: block;
+                border-bottom: 40px solid white;
+            }
+
+            .contenedor-pacientes {
+                width: 90%;
+                height: auto;
+                margin: 0;
+                padding: 25px;
+            }
+            .contenedor-pacientes h3 {
+                margin-top: 10px;
+                font-size: 20px;
+            }
+            .contenedor-pacientes p {
+                font-size: 14px;
+            }
+
+            /* --------- OTROS DATOS --------- */
+            .otros h2 {
+                font-size: 28px;
+                padding: 40px 20px 10px 20px;
+                text-align: center;
+            }
+            .otros ol {
+                padding: 0 25px 40px 25px;
+                font-size: 15px;
+                line-height: 28px;
+            }
+
+            /* -------- WHATSAPP -------- */
+            #whatsapp a {
+                top: 88%;
+                right: 3%;
+            }
+            .whatsapp-icon {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+
 
         </style>
         
@@ -525,6 +708,45 @@
                 }, 200);
                 });
             });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const elementos = document.querySelectorAll('.contenedor-pacientes');
+
+            const observador = new IntersectionObserver((entradas) => {
+                entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('visible');
+                }
+                });
+            }, {
+                threshold: 0.2  // 20% del elemento debe verse para activarse
+            });
+
+            elementos.forEach(el => observador.observe(el));
+            });
+        </script>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const menuBtn = document.querySelector(".menu-hamburguesa");
+            const menu = document.querySelector(".lista-menu");
+
+            menuBtn.addEventListener("click", () => {
+                menu.classList.toggle("show");
+                menuBtn.classList.toggle("active");
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll(".lista-menu a").forEach(link => {
+                link.addEventListener("click", () => {
+                    menu.classList.remove("show");
+                    menuBtn.classList.remove("active");
+                });
+            });
+        });
         </script>
 
 
